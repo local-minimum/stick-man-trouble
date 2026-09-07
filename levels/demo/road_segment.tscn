@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://d3ynduc2655mw"]
+
+[ext_resource type="Texture2D" uid="uid://rlhl7n6jrdb2" path="res://models/alphalt_road-albedo.png" id="1_n0hgj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ltmj"]
+albedo_texture = ExtResource("1_n0hgj")
+
+[sub_resource type="QuadMesh" id="QuadMesh_kjfgv"]
+material = SubResource("StandardMaterial3D_0ltmj")
+size = Vector2(6, 12)
+
+[node name="RoadSegment" type="MeshInstance3D" unique_id=1548397879]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_kjfgv")
