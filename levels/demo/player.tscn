@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://btecah2n0xbrg"]
+
+[ext_resource type="Script" uid="uid://dbrx5txvkhiww" path="res://levels/player.gd" id="1_mekp1"]
+[ext_resource type="Texture2D" uid="uid://dqmutfwyn6pt" path="res://stickmen/gun1.png" id="2_7touw"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_kjfgv"]
+top_radius = 1.0
+bottom_radius = 1.5
+height = 3.0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_oho0o"]
+points = PackedVector3Array(0.18207236, -1.3207649, 1.4574286, -0.27539238, -1.4680887, -1.4683814, -0.27371356, -1.4134338, -1.4594308, 1.4685074, -1.4685075, -0.2750181, 0.8164417, 1.4512943, -0.58947545, -1.0025095, 1.4582217, 0.09092727, -1.4684597, -1.4684598, 0.2752859, 0.58970076, 1.4513744, 0.81625783, -0.5896954, 1.4513613, -0.81626457, -0.5423, 1.4009271, 0.8586681, -1.2746321, -1.4566003, -0.7735804, 1.0572356, -1.470799, 1.0572711, 0.5935612, -1.4608756, -1.3693535, -0.7738702, -1.4567473, 1.2744869, 0.9549575, 1.4549427, 0.3180439, 0.091101736, 1.4584846, -1.0024557, -0.09110265, 1.4584994, 1.0024532, 1.1818129, -1.4543419, -0.9087746, -1.2147582, -1.2596174, 0.80970436, 1.4213886, -1.4670639, 0.4582814, -0.90888226, -1.4541547, -1.1816943, -0.95487434, 1.4552503, -0.3181245, -1.4685098, -1.4685099, -0.27501854, -0.27517968, -1.4684876, 1.4684821, 1.002509, 1.458221, -0.09093998, -0.90208185, 1.4432746, 0.4508477, 0.5896974, 1.4513662, -0.8162673, 0.59356624, -1.4608883, 1.369353, 0.3182666, 1.4551365, 0.95484203, 0.27545556, -1.4684255, -1.4684308, -0.31826338, 1.4551219, -0.9548458, -0.7767258, 1.4621228, -0.63967574)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ltmj"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("2_7touw")
+
+[sub_resource type="QuadMesh" id="QuadMesh_kjfgv"]
+material = SubResource("StandardMaterial3D_0ltmj")
+
+[node name="Player" type="Area3D" unique_id=331298481]
+input_ray_pickable = false
+script = ExtResource("1_mekp1")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=313019969]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+cull_mask = 1048573
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=268580030]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+layers = 2
+mesh = SubResource("CylinderMesh_kjfgv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=956976327]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("ConvexPolygonShape3D_oho0o")
+
+[node name="Gun Arm 1" type="Node3D" parent="." unique_id=1623721737]
+transform = Transform3D(1, 0, 0, 0, 0.98610026, -0.1661513, 0, 0.1661513, 0.98610026, 0, 1.339693, 0)
+
+[node name="Gun Mesh" type="MeshInstance3D" parent="Gun Arm 1" unique_id=1299980236]
+transform = Transform3D(0.80768955, 0.589608, 6.107781e-08, -4.371139e-08, -4.371139e-08, 1, 0.589608, -0.80768955, -9.532647e-09, 0, 0, -2.3)
+mesh = SubResource("QuadMesh_kjfgv")

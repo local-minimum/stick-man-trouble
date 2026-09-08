@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dge1cva4qgt83"]
+
+[ext_resource type="Texture2D" uid="uid://kt1wrkr1qim6" path="res://stickmen/stickman1.png" id="1_1nyuo"]
+[ext_resource type="Script" uid="uid://c2m7i1jk0k0j5" path="res://levels/demo/enemy.gd" id="2_dmrsn"]
+[ext_resource type="Texture2D" uid="uid://dqmutfwyn6pt" path="res://stickmen/gun1.png" id="3_dmrsn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ltmj"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_1nyuo")
+
+[sub_resource type="QuadMesh" id="QuadMesh_0ltmj"]
+material = SubResource("StandardMaterial3D_0ltmj")
+size = Vector2(0.5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kjfgv"]
+size = Vector3(0.6, 1, 0.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_00ba2"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("3_dmrsn")
+
+[sub_resource type="QuadMesh" id="QuadMesh_kjfgv"]
+material = SubResource("StandardMaterial3D_00ba2")
+size = Vector2(0.4, 0.4)
+
+[node name="StickMan" type="MeshInstance3D" unique_id=1566526407]
+transform = Transform3D(1.253569, 0, 0.8237505, 0, 1.5, 0, -0.8237505, 0, 1.253569, 0, 0, 0)
+mesh = SubResource("QuadMesh_0ltmj")
+script = ExtResource("2_dmrsn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=782218226]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=107370932]
+shape = SubResource("BoxShape3D_kjfgv")
+
+[node name="Gun" type="MeshInstance3D" parent="." unique_id=1302993731]
+transform = Transform3D(-0.33796686, 0.9407421, 0.027988508, 0.9408483, 0.3384694, -0.015603393, -0.024151975, 0.021059468, -0.9994866, 0.306, -0.153, 0)
+mesh = SubResource("QuadMesh_kjfgv")
+
+[connection signal="input_event" from="StaticBody3D" to="." method="_on_static_body_3d_input_event"]

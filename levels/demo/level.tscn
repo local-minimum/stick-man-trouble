@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://0uc4lsa20wh0"]
 
 [ext_resource type="PackedScene" uid="uid://d3ynduc2655mw" path="res://levels/demo/road_segment.tscn" id="1_7mxt6"]
-[ext_resource type="Texture2D" uid="uid://kt1wrkr1qim6" path="res://stickmen/stickman1.png" id="2_mvxq3"]
-[ext_resource type="Script" uid="uid://dbrx5txvkhiww" path="res://levels/player.gd" id="2_o183l"]
+[ext_resource type="PackedScene" uid="uid://dge1cva4qgt83" path="res://levels/demo/stick_man.tscn" id="2_mvxq3"]
+[ext_resource type="PackedScene" uid="uid://btecah2n0xbrg" path="res://levels/demo/player.tscn" id="3_mvxq3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7mxt6"]
 sky_top_color = Color(0.34768772, 0.15259627, 0.07439866, 1)
@@ -50,18 +50,6 @@ size = Vector3(10, 6, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sk378"]
 size = Vector3(10, 6, 10)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ltmj"]
-transparency = 1
-shading_mode = 0
-albedo_texture = ExtResource("2_mvxq3")
-
-[sub_resource type="QuadMesh" id="QuadMesh_0ltmj"]
-material = SubResource("StandardMaterial3D_0ltmj")
-size = Vector2(0.5, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_kjfgv"]
-size = Vector3(0.6, 1, 0.05)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hopu4"]
 size = Vector3(10, 6, 10)
@@ -114,14 +102,6 @@ albedo_color = Color(0.12941177, 0.33333334, 0.16078432, 1)
 [sub_resource type="PlaneMesh" id="PlaneMesh_kjfgv"]
 material = SubResource("StandardMaterial3D_7mxt6")
 size = Vector2(2000, 2000)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_kjfgv"]
-top_radius = 1.0
-bottom_radius = 1.5
-height = 3.0
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_oho0o"]
-points = PackedVector3Array(0.18207236, -1.3207649, 1.4574286, -0.27539238, -1.4680887, -1.4683814, -0.27371356, -1.4134338, -1.4594308, 1.4685074, -1.4685075, -0.2750181, 0.8164417, 1.4512943, -0.58947545, -1.0025095, 1.4582217, 0.09092727, -1.4684597, -1.4684598, 0.2752859, 0.58970076, 1.4513744, 0.81625783, -0.5896954, 1.4513613, -0.81626457, -0.5423, 1.4009271, 0.8586681, -1.2746321, -1.4566003, -0.7735804, 1.0572356, -1.470799, 1.0572711, 0.5935612, -1.4608756, -1.3693535, -0.7738702, -1.4567473, 1.2744869, 0.9549575, 1.4549427, 0.3180439, 0.091101736, 1.4584846, -1.0024557, -0.09110265, 1.4584994, 1.0024532, 1.1818129, -1.4543419, -0.9087746, -1.2147582, -1.2596174, 0.80970436, 1.4213886, -1.4670639, 0.4582814, -0.90888226, -1.4541547, -1.1816943, -0.95487434, 1.4552503, -0.3181245, -1.4685098, -1.4685099, -0.27501854, -0.27517968, -1.4684876, 1.4684821, 1.002509, 1.458221, -0.09093998, -0.90208185, 1.4432746, 0.4508477, 0.5896974, 1.4513662, -0.8162673, 0.59356624, -1.4608883, 1.369353, 0.3182666, 1.4551365, 0.95484203, 0.27545556, -1.4684255, -1.4684308, -0.31826338, 1.4551219, -0.9548458, -0.7767258, 1.4621228, -0.63967574)
 
 [node name="Level" type="Node3D" unique_id=1586460763]
 
@@ -279,14 +259,8 @@ mesh = SubResource("BoxMesh_7mxt6")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Houses/House/StaticBody3D" unique_id=387269676]
 shape = SubResource("BoxShape3D_sk378")
 
-[node name="StickMan" type="MeshInstance3D" parent="World/Houses/House" unique_id=923923757]
+[node name="StickMan" parent="World/Houses/House" unique_id=1566526407 instance=ExtResource("2_mvxq3")]
 transform = Transform3D(1.253569, 0, 0.8237505, 0, 1.5, 0, -0.8237505, 0, 1.253569, 4.7972603, 3.69983, -2.3809605)
-mesh = SubResource("QuadMesh_0ltmj")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Houses/House/StickMan" unique_id=1036690173]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Houses/House/StickMan/StaticBody3D" unique_id=881302184]
-shape = SubResource("BoxShape3D_kjfgv")
 
 [node name="MeshInstance3D17" type="MeshInstance3D" parent="World/Houses" unique_id=527803880]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 3, -94)
@@ -409,19 +383,4 @@ shape = SubResource("BoxShape3D_t5nvq")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.02, 0)
 mesh = SubResource("PlaneMesh_kjfgv")
 
-[node name="Player" type="Area3D" parent="." unique_id=322598115]
-input_ray_pickable = false
-script = ExtResource("2_o183l")
-
-[node name="Camera3D" type="Camera3D" parent="Player" unique_id=1266398909]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
-cull_mask = 1048573
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=1853966948]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-layers = 2
-mesh = SubResource("CylinderMesh_kjfgv")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=887432200]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-shape = SubResource("ConvexPolygonShape3D_oho0o")
+[node name="Player" parent="." unique_id=331298481 instance=ExtResource("3_mvxq3")]
