@@ -1,6 +1,8 @@
 extends Area3D
 class_name PlayerCharacter
 
+@export var cam: Camera3D
+@export var gun_arm: Node3D
 @export var max_speed: float = 20.0
 @export var min_speed: float = 1.0
 @export var acceleration: float = 1.0
@@ -9,6 +11,7 @@ class_name PlayerCharacter
 @export var road_right: Vector3 = Vector3(1.0, 0.0, 0.0)
 @export var road_width: float = 6.0
 @export var road_overshoot: float = -1.0
+@export var gun_aim_ray: RayCast3D
 
 var _road_position: Vector3
 var _speed: float = 0.0
@@ -50,3 +53,17 @@ func _set_current_road_position():
     # This is a bit of a hack
     _road_position = global_position
     _road_position.x = 0
+
+func aim_crosshair(pos: Vector2) -> void:
+    var ray_origin: Vector3 = cam.project_ray_origin(pos)
+    var ray_normal: Vector3 = cam.project_ray_normal(pos)
+    gun_aim_ray.global_position = ray_origin
+    gun_aim_ray.target_position = gun_aim_ray.to_local(ray_origin + ray_normal * 150)
+    gun_aim_ray.force_raycast_update()
+    if gun_aim_ray.is_colliding():
+        gun_arm.look_at(gun_aim_ray.get_collision_point())
+    else:
+        gun_arm.look_at(ray_origin + ray_normal * 150)
+
+    gun_arm.rotation_degrees.x = clampf(gun_arm.rotation_degrees.x, -10.0, 30.0)
+    #gun_arm.rotation_degrees.y = clampf(gun_arm.rotation_degrees.y, -40.0, 40.0)

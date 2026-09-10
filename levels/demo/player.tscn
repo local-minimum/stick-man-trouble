@@ -19,9 +19,13 @@ albedo_texture = ExtResource("2_7touw")
 [sub_resource type="QuadMesh" id="QuadMesh_kjfgv"]
 material = SubResource("StandardMaterial3D_0ltmj")
 
-[node name="Player" type="Area3D" unique_id=331298481]
+[node name="Player" type="Area3D" unique_id=331298481 node_paths=PackedStringArray("cam", "gun_arm", "gun_aim_ray")]
+collision_layer = 2
 input_ray_pickable = false
 script = ExtResource("1_mekp1")
+cam = NodePath("Camera3D")
+gun_arm = NodePath("Gun Arm 1")
+gun_aim_ray = NodePath("Gun Aim Ray")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=313019969]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
@@ -42,3 +46,6 @@ transform = Transform3D(1, 0, 0, 0, 0.98610026, -0.1661513, 0, 0.1661513, 0.9861
 [node name="Gun Mesh" type="MeshInstance3D" parent="Gun Arm 1" unique_id=1299980236]
 transform = Transform3D(0.80768955, 0.589608, 6.107781e-08, -4.371139e-08, -4.371139e-08, 1, 0.589608, -0.80768955, -9.532647e-09, 0, 0, -2.3)
 mesh = SubResource("QuadMesh_kjfgv")
+
+[node name="Gun Aim Ray" type="RayCast3D" parent="." unique_id=1959154607]
+enabled = false

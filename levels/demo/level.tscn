@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://d3ynduc2655mw" path="res://levels/demo/road_segment.tscn" id="1_7mxt6"]
 [ext_resource type="PackedScene" uid="uid://dge1cva4qgt83" path="res://levels/demo/stick_man.tscn" id="2_mvxq3"]
 [ext_resource type="PackedScene" uid="uid://btecah2n0xbrg" path="res://levels/demo/player.tscn" id="3_mvxq3"]
+[ext_resource type="Texture2D" uid="uid://g5vsbi8yoejb" path="res://stickmen/crosshair.png" id="4_fnxub"]
+[ext_resource type="Script" uid="uid://brri2niek4kvq" path="res://levels/demo/cross_hair.gd" id="5_sg4r5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7mxt6"]
 sky_top_color = Color(0.34768772, 0.15259627, 0.07439866, 1)
@@ -384,3 +386,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.02, 0)
 mesh = SubResource("PlaneMesh_kjfgv")
 
 [node name="Player" parent="." unique_id=331298481 instance=ExtResource("3_mvxq3")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1780518744]
+
+[node name="CrossHair" type="TextureRect" parent="CanvasLayer" unique_id=1119436529 node_paths=PackedStringArray("player")]
+offset_right = 32.0
+offset_bottom = 32.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(-16, -16)
+mouse_filter = 2
+texture = ExtResource("4_fnxub")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("5_sg4r5")
+player = NodePath("../../Player")
