@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://btecah2n0xbrg" path="res://levels/demo/player.tscn" id="3_mvxq3"]
 [ext_resource type="Texture2D" uid="uid://g5vsbi8yoejb" path="res://stickmen/crosshair.png" id="4_fnxub"]
 [ext_resource type="Script" uid="uid://brri2niek4kvq" path="res://levels/demo/cross_hair.gd" id="5_sg4r5"]
+[ext_resource type="Script" uid="uid://db14kf60nf47a" path="res://levels/demo/bullets_pool.gd" id="6_sg4r5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7mxt6"]
 sky_top_color = Color(0.34768772, 0.15259627, 0.07439866, 1)
@@ -400,3 +401,8 @@ expand_mode = 1
 stretch_mode = 5
 script = ExtResource("5_sg4r5")
 player = NodePath("../../Player")
+
+[node name="BulletsPool" type="Node3D" parent="." unique_id=727734673]
+script = ExtResource("6_sg4r5")
+_bullet_templates = Array[String](["uid://wvq22gh7jybi"])
+_bullet_speeds = Array[float]([100.0])

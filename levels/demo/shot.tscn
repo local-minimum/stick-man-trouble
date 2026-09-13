@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://wvq22gh7jybi"]
+
+[ext_resource type="Texture2D" uid="uid://cb50cxvls77mn" path="res://stickmen/shot1.png" id="1_0conb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kr4f2"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("1_0conb")
+
+[sub_resource type="QuadMesh" id="QuadMesh_0ltmj"]
+material = SubResource("StandardMaterial3D_kr4f2")
+size = Vector2(0.1, 0.1)
+
+[node name="Shot" type="MeshInstance3D" unique_id=1894366214]
+mesh = SubResource("QuadMesh_0ltmj")
