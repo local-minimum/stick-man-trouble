@@ -71,3 +71,11 @@ func aim_crosshair(pos: Vector2) -> void:
 
     gun_arm.rotation_degrees.x = clampf(gun_arm.rotation_degrees.x, -10.0, 30.0)
     #gun_arm.rotation_degrees.y = clampf(gun_arm.rotation_degrees.y, -40.0, 40.0)
+
+static func get_player_parent(n: Node) -> PlayerCharacter:
+    while n:
+        if n is PlayerCharacter:
+            return n as PlayerCharacter
+        n = n.get_parent()
+
+    return null

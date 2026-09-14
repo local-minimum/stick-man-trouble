@@ -21,7 +21,7 @@ albedo_texture = ExtResource("2_7touw")
 material = SubResource("StandardMaterial3D_0ltmj")
 
 [node name="Player" type="Area3D" unique_id=331298481 node_paths=PackedStringArray("cam", "gun_arm", "aim_ray", "gun")]
-collision_layer = 2
+collision_layer = 3
 input_ray_pickable = false
 script = ExtResource("1_mekp1")
 cam = NodePath("Camera3D")
