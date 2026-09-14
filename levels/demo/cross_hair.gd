@@ -18,17 +18,27 @@ func _input(event: InputEvent) -> void:
 
         player.aim_crosshair(global_position)
 
-    elif event.is_action(&"aim_left"):
+    if event.is_action_pressed(&"aim_left"):
         _virt_aim.x = -event.get_action_strength(&"aim_left")
-    elif event.is_action(&"aim_right"):
+    elif event.is_action_released(&"aim_left"):
+        _virt_aim.x = maxf(_virt_aim.x, 0.0)
+    if event.is_action_pressed(&"aim_right"):
         _virt_aim.x = event.get_action_strength(&"aim_right")
-    elif event.is_action(&"aim_up"):
+    elif event.is_action_released(&"aim_right"):
+        _virt_aim.x = minf(_virt_aim.x, 0.0)
+
+    if event.is_action_pressed(&"aim_up"):
         _virt_aim.y = -event.get_action_strength(&"aim_up")
-    elif event.is_action(&"aim_down"):
+    elif event.is_action_released(&"aim_up"):
+        _virt_aim.y = maxf(_virt_aim.y, 0.0)
+
+    if event.is_action_pressed(&"aim_down"):
         _virt_aim.y = event.get_action_strength(&"aim_down")
+    elif event.is_action_released(&"aim_down"):
+        _virt_aim.y = minf(_virt_aim.y, 0.0)
 
 func _process(delta: float) -> void:
-    if _virt_aim == Vector2.ZERO:
+    if _virt_aim == Vector2.ZERO || player.is_paused():
         return
 
     var bounds: Rect2 = get_viewport_rect()

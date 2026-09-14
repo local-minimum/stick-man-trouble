@@ -20,6 +20,9 @@ var _speed: float = 0.0
 var _lateral_speed: float = 0.0
 var _paused: bool
 
+func is_paused() -> bool:
+    return _paused
+
 func _input(event: InputEvent) -> void:
     if event.is_action_pressed(&"player_left"):
         _lateral_speed = -abs(event.get_action_strength(&"player_left"))
@@ -32,7 +35,8 @@ func _input(event: InputEvent) -> void:
     elif event.is_action_pressed(&"pause"):
         _paused = !_paused
     elif event.is_action_pressed(&"player_shoot"):
-        gun.shoot(aim_ray, _speed)
+        if !_paused:
+            gun.shoot(aim_ray, _speed)
 
 func _process(delta: float) -> void:
     if _paused:
