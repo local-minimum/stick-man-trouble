@@ -64,6 +64,7 @@ func aim_crosshair(pos: Vector2) -> void:
     aim_ray.global_position = ray_origin
     aim_ray.target_position = aim_ray.to_local(ray_origin + ray_normal * aim_distance)
     aim_ray.force_raycast_update()
+
     if aim_ray.is_colliding():
         gun_arm.look_at(aim_ray.get_collision_point())
     else:
