@@ -9,7 +9,7 @@ albedo_texture = ExtResource("1_0conb")
 
 [sub_resource type="QuadMesh" id="QuadMesh_0ltmj"]
 material = SubResource("StandardMaterial3D_kr4f2")
-size = Vector2(0.1, 0.1)
+size = Vector2(0.2, 0.2)
 
 [node name="Shot" type="MeshInstance3D" unique_id=1894366214]
 mesh = SubResource("QuadMesh_0ltmj")

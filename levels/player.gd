@@ -12,6 +12,7 @@ class_name PlayerCharacter
 @export var road_width: float = 6.0
 @export var road_overshoot: float = -1.0
 @export var aim_ray: RayCast3D
+@export var aim_distance: float = 250
 @export var gun: Gun
 
 var _road_position: Vector3
@@ -31,7 +32,7 @@ func _input(event: InputEvent) -> void:
     elif event.is_action_pressed(&"pause"):
         _paused = !_paused
     elif event.is_action_pressed(&"player_shoot"):
-        gun.shoot()
+        gun.shoot(aim_ray, _speed)
 
 func _process(delta: float) -> void:
     if _paused:
@@ -61,12 +62,12 @@ func aim_crosshair(pos: Vector2) -> void:
     var ray_origin: Vector3 = cam.project_ray_origin(pos)
     var ray_normal: Vector3 = cam.project_ray_normal(pos)
     aim_ray.global_position = ray_origin
-    aim_ray.target_position = aim_ray.to_local(ray_origin + ray_normal * 150)
+    aim_ray.target_position = aim_ray.to_local(ray_origin + ray_normal * aim_distance)
     aim_ray.force_raycast_update()
     if aim_ray.is_colliding():
         gun_arm.look_at(aim_ray.get_collision_point())
     else:
-        gun_arm.look_at(ray_origin + ray_normal * 150)
+        gun_arm.look_at(ray_origin + ray_normal * aim_distance)
 
     gun_arm.rotation_degrees.x = clampf(gun_arm.rotation_degrees.x, -10.0, 30.0)
     #gun_arm.rotation_degrees.y = clampf(gun_arm.rotation_degrees.y, -40.0, 40.0)
