@@ -14,9 +14,6 @@ class_name PlayerCharacter
 @export var aim_ray: RayCast3D
 @export var aim_distance: float = 250
 @export var aim_assist_checks: int = 3
-#@export var aim_assist_rel_strength: float = 0.05
-
-#var _aim_assist_strength: float
 
 @export var gun: Gun
 
@@ -31,9 +28,6 @@ var _paused: bool
 
 func is_paused() -> bool:
     return _paused
-
-#func _ready() -> void:
-    #_aim_assist_strength = get_viewport().get_visible_rect().size.x * aim_assist_rel_strength
 
 func _input(event: InputEvent) -> void:
     if event.is_action_pressed(&"player_left"):
@@ -80,18 +74,15 @@ func _set_current_road_position():
 func aim_crosshair(pos: Vector2) -> Vector2:
     _aim_cast_pos(pos)
 
-    if !aim_ray.is_colliding() && aim_assist:
+    if aim_assist:
         var hit_info: Dictionary
         if _aim_assist(hit_info):
-            var pt3: Vector3 = hit_info[HitInfoField.POINT]
-            pt3 += 0.1 * (hit_info[HitInfoField.ENEMY].global_position - pt3)
+            var pt3: Vector3 = lerp(hit_info[HitInfoField.POINT], hit_info[HitInfoField.ENEMY].global_position, 0.8)
             var pt: Vector2 = cam.unproject_position(pt3)
-            var delta: Vector2 = (pt - pos)
-            pos += delta.limit_length(200.0)
+            pos = pt
             _aim_cast_pos(pos)
 
     gun_arm.rotation_degrees.x = clampf(gun_arm.rotation_degrees.x, -10.0, 30.0)
-    #gun_arm.rotation_degrees.y = clampf(gun_arm.rotation_degrees.y, -40.0, 40.0)
     return pos
 
 enum HitInfoField { ENEMY, POINT }
@@ -130,22 +121,22 @@ func _aim_assist(hit_info: Dictionary) -> bool:
         else:
             break
 
+    aim_ray.clear_exceptions()
     aim_ray.set_collision_mask_value(Enemy.AIM_ASSIST_LAYER, false)
-    match hit_info.size():
-        0:
-            return false
-        1:
-            hit_info[HitInfoField.ENEMY] = targets[0]
-            hit_info[HitInfoField.POINT] = points[0]
-            return true
+
+    if targets.is_empty():
+        return false
 
     var _best: int = -1
     var _best_dist_sq: float = -1
     var _best_pt: Vector3
 
-    for i: int in hit_info.size():
+    for i: int in targets.size():
         var enemy: Enemy = targets[i]
         var pt: Vector3 = points[i]
+        if enemy == null:
+            continue
+
         for col_shape: CollisionShape3D in enemy.body.find_children("", "CollisionShape3D", false):
             if col_shape.shape is BoxShape3D:
                 var box: BoxShape3D = col_shape.shape
@@ -157,6 +148,9 @@ func _aim_assist(hit_info: Dictionary) -> bool:
                     _best = i
                     _best_dist_sq = dist_sq
                     _best_pt = closest
+
+    if _best < 0:
+        return false
 
     hit_info[HitInfoField.ENEMY] = targets[_best]
     hit_info[HitInfoField.POINT] = _best_pt

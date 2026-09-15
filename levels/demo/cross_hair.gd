@@ -23,8 +23,7 @@ func _input(event: InputEvent) -> void:
         mode = InputMode.MOUSE
 
         if !player.is_paused():
-            global_position = mevt.global_position
-            player.aim_crosshair(global_position)
+            global_position = player.aim_crosshair(mevt.global_position)
 
     if event.is_action_pressed(&"aim_left"):
         _virt_aim.x = -event.get_action_strength(&"aim_left")
@@ -60,5 +59,7 @@ func _process(delta: float) -> void:
 
     var bounds: Rect2 = get_viewport_rect()
 
-    global_position = (global_position + _virt_aim * delta * controller_sense * bounds.size).clamp(bounds.position, bounds.end)
-    player.aim_crosshair(global_position)
+    if _virt_aim != Vector2.ZERO:
+        global_position = (global_position + _virt_aim * delta * controller_sense * bounds.size).clamp(bounds.position, bounds.end)
+
+    global_position = player.aim_crosshair(global_position)
