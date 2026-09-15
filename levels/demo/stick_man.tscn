@@ -17,6 +17,9 @@ size = Vector2(0.5, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_kjfgv"]
 size = Vector3(0.6, 1, 0.05)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_dmrsn"]
+size = Vector3(3, 2.5, 0.05)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_00ba2"]
 transparency = 1
 cull_mode = 2
@@ -27,18 +30,28 @@ albedo_texture = ExtResource("3_dmrsn")
 material = SubResource("StandardMaterial3D_00ba2")
 size = Vector2(0.4, 0.4)
 
-[node name="StickMan" type="MeshInstance3D" unique_id=1566526407]
-transform = Transform3D(1.253569, 0, 0.8237505, 0, 1.5, 0, -0.8237505, 0, 1.253569, 0, 0, 0)
+[node name="StickMan" type="MeshInstance3D" unique_id=1566526407 node_paths=PackedStringArray("body")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 mesh = SubResource("QuadMesh_0ltmj")
 script = ExtResource("2_dmrsn")
+body = NodePath("StickMan Body")
 
 [node name="StickMan Body" type="StaticBody3D" parent="." unique_id=782218226]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StickMan Body" unique_id=107370932]
 shape = SubResource("BoxShape3D_kjfgv")
 
+[node name="Aim Assist" type="StaticBody3D" parent="." unique_id=1291691483]
+collision_layer = 2147483648
+collision_mask = 0
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aim Assist" unique_id=542454912]
+shape = SubResource("BoxShape3D_dmrsn")
+
 [node name="Gun" type="MeshInstance3D" parent="." unique_id=1302993731]
 transform = Transform3D(-0.33796686, 0.9407421, 0.027988508, 0.9408483, 0.3384694, -0.015603393, -0.024151975, 0.021059468, -0.9994866, 0.306, -0.153, 0)
 mesh = SubResource("QuadMesh_kjfgv")
 
 [connection signal="input_event" from="StickMan Body" to="." method="_on_static_body_3d_input_event"]
+[connection signal="input_event" from="Aim Assist" to="." method="_on_static_body_3d_input_event"]

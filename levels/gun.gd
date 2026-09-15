@@ -6,6 +6,7 @@ class_name Gun
 @export var cam_shoot: bool
 
 var _last_shot_barrel: int
+var last_shot: int
 
 func shoot(ray: RayCast3D, speed: float) -> void:
     _last_shot_barrel += 1
@@ -18,6 +19,8 @@ func shoot(ray: RayCast3D, speed: float) -> void:
         _cam_shoot(barrels[_last_shot_barrel], ray, speed)
     else:
         _shoot(barrels[_last_shot_barrel], speed)
+
+    last_shot = Time.get_ticks_msec()
 
 func _cam_shoot(barrel: RayCast3D, from: RayCast3D, speed) -> void:
     from.force_raycast_update()

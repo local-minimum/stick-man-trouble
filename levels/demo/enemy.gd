@@ -1,9 +1,11 @@
 extends Node3D
 class_name Enemy
 
+static var AIM_ASSIST_LAYER: int = 32
 @export var _ready_trigger: ProgressTrigger
 @export var _ready_position: Node3D
 @export var _ready_transition_duration: float = 0.5
+@export var body: StaticBody3D
 
 var alive: bool = true
 

@@ -13,7 +13,16 @@ class_name PlayerCharacter
 @export var road_overshoot: float = -1.0
 @export var aim_ray: RayCast3D
 @export var aim_distance: float = 250
+@export var aim_assist_checks: int = 3
+#@export var aim_assist_rel_strength: float = 0.05
+
+#var _aim_assist_strength: float
+
 @export var gun: Gun
+
+var aim_assist: bool:
+    get():
+        return CrossHair.mode == CrossHair.InputMode.CONTROLLER
 
 var _road_position: Vector3
 var _speed: float = 0.0
@@ -22,6 +31,9 @@ var _paused: bool
 
 func is_paused() -> bool:
     return _paused
+
+#func _ready() -> void:
+    #_aim_assist_strength = get_viewport().get_visible_rect().size.x * aim_assist_rel_strength
 
 func _input(event: InputEvent) -> void:
     if event.is_action_pressed(&"player_left"):
@@ -57,25 +69,107 @@ func _process(delta: float) -> void:
     else:
         global_position += _speed * road_direction * delta
 
+    if CrossHair.mode == CrossHair.InputMode.CONTROLLER && Time.get_ticks_msec() - gun.last_shot > 200:
+        gun.shoot(aim_ray, _speed)
+
 func _set_current_road_position():
     # This is a bit of a hack
     _road_position = global_position
     _road_position.x = 0
 
-func aim_crosshair(pos: Vector2) -> void:
+func aim_crosshair(pos: Vector2) -> Vector2:
+    _aim_cast_pos(pos)
+
+    if !aim_ray.is_colliding() && aim_assist:
+        var hit_info: Dictionary
+        if _aim_assist(hit_info):
+            var pt3: Vector3 = hit_info[HitInfoField.POINT]
+            pt3 += 0.1 * (hit_info[HitInfoField.ENEMY].global_position - pt3)
+            var pt: Vector2 = cam.unproject_position(pt3)
+            var delta: Vector2 = (pt - pos)
+            pos += delta.limit_length(200.0)
+            _aim_cast_pos(pos)
+
+    gun_arm.rotation_degrees.x = clampf(gun_arm.rotation_degrees.x, -10.0, 30.0)
+    #gun_arm.rotation_degrees.y = clampf(gun_arm.rotation_degrees.y, -40.0, 40.0)
+    return pos
+
+enum HitInfoField { ENEMY, POINT }
+
+func _aim_cast_pos(pos: Vector2) -> void:
     var ray_origin: Vector3 = cam.project_ray_origin(pos)
     var ray_normal: Vector3 = cam.project_ray_normal(pos)
     aim_ray.global_position = ray_origin
     aim_ray.target_position = aim_ray.to_local(ray_origin + ray_normal * aim_distance)
     aim_ray.force_raycast_update()
-
     if aim_ray.is_colliding():
         gun_arm.look_at(aim_ray.get_collision_point())
     else:
         gun_arm.look_at(ray_origin + ray_normal * aim_distance)
 
-    gun_arm.rotation_degrees.x = clampf(gun_arm.rotation_degrees.x, -10.0, 30.0)
-    #gun_arm.rotation_degrees.y = clampf(gun_arm.rotation_degrees.y, -40.0, 40.0)
+func _aim_assist(hit_info: Dictionary) -> bool:
+    aim_ray.set_collision_mask_value(Enemy.AIM_ASSIST_LAYER, true)
+
+    var points: Array[Vector3]
+    var targets: Array[Enemy]
+
+    while points.size() < aim_assist_checks:
+        aim_ray.force_raycast_update()
+        if !aim_ray.is_colliding():
+            break
+
+        var col: Object = aim_ray.get_collider()
+
+        if col is CollisionObject3D:
+            aim_ray.add_exception(col)
+            var target: Enemy = Enemy.get_enemy_parent(col)
+            if !targets.has(target):
+                targets.append(target)
+                points.append(aim_ray.get_collision_point())
+
+        else:
+            break
+
+    aim_ray.set_collision_mask_value(Enemy.AIM_ASSIST_LAYER, false)
+    match hit_info.size():
+        0:
+            return false
+        1:
+            hit_info[HitInfoField.ENEMY] = targets[0]
+            hit_info[HitInfoField.POINT] = points[0]
+            return true
+
+    var _best: int = -1
+    var _best_dist_sq: float = -1
+    var _best_pt: Vector3
+
+    for i: int in hit_info.size():
+        var enemy: Enemy = targets[i]
+        var pt: Vector3 = points[i]
+        for col_shape: CollisionShape3D in enemy.body.find_children("", "CollisionShape3D", false):
+            if col_shape.shape is BoxShape3D:
+                var box: BoxShape3D = col_shape.shape
+                var box_start: Vector3 = col_shape.to_global(-0.5 * box.size)
+                var box_end: Vector3 = col_shape.to_global(0.5 * box.size)
+                var closest: Vector3 = closest_box_surface_point(box_start, box_end, pt)
+                var dist_sq: float = closest.distance_squared_to(pt)
+                if _best < 0 || dist_sq < _best_dist_sq:
+                    _best = i
+                    _best_dist_sq = dist_sq
+                    _best_pt = closest
+
+    hit_info[HitInfoField.ENEMY] = targets[_best]
+    hit_info[HitInfoField.POINT] = _best_pt
+    return true
+
+
+static func closest_box_surface_point(start: Vector3, end: Vector3, point: Vector3) -> Vector3:
+    return Vector3(
+        clampf(point.x, start.x, end.x),
+        clampf(point.y, start.y, end.y),
+        clampf(point.z, start.z, end.z),
+    )
+
 
 static func get_player_parent(n: Node) -> PlayerCharacter:
     while n:
