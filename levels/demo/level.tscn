@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://c232q6or5bw7j" path="res://levels/demo/goal_trigger.gd" id="4_okht7"]
 [ext_resource type="Script" uid="uid://brri2niek4kvq" path="res://levels/demo/cross_hair.gd" id="5_sg4r5"]
 [ext_resource type="Script" uid="uid://db14kf60nf47a" path="res://levels/demo/bullets_pool.gd" id="6_sg4r5"]
+[ext_resource type="Script" uid="uid://bf3y11gflumgr" path="res://levels/demo/virtual_controls.gd" id="8_bj7pd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7mxt6"]
 sky_top_color = Color(0.34768772, 0.15259627, 0.07439866, 1)
@@ -494,26 +495,29 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 60
-theme_override_constants/margin_top = 60
-theme_override_constants/margin_right = 60
-theme_override_constants/margin_bottom = 60
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+script = ExtResource("8_bj7pd")
 
 [node name="Virtual Move" type="VirtualJoystick" parent="CanvasLayer/Virtual controls" unique_id=1941900699]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
-deadzone_ratio = 0.05
+joystick_mode = 1
 action_left = &"player_left"
 action_right = &"player_right"
-action_up = &""
-action_down = &""
+action_up = &"nothing"
+action_down = &"nothing"
 
 [node name="Virtual Aim" type="VirtualJoystick" parent="CanvasLayer/Virtual controls" unique_id=858958068]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-deadzone_ratio = 0.05
+joystick_mode = 1
 action_left = &"aim_left"
 action_right = &"aim_right"
 action_up = &"aim_up"

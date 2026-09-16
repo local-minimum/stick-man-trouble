@@ -79,8 +79,9 @@ func aim_crosshair(pos: Vector2) -> Vector2:
         if _aim_assist(hit_info):
             var pt3: Vector3 = lerp(hit_info[HitInfoField.POINT], hit_info[HitInfoField.ENEMY].global_position, 0.8)
             var pt: Vector2 = cam.unproject_position(pt3)
-            pos = pt
-            _aim_cast_pos(pos)
+            _aim_cast_pos(pt)
+            if aim_ray.is_colliding() && Enemy.get_enemy_parent(aim_ray.get_collider()) != null:
+                pos = pt
 
     gun_arm.rotation_degrees.x = clampf(gun_arm.rotation_degrees.x, -10.0, 30.0)
     return pos

@@ -76,6 +76,10 @@ aim_right={
 "events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":2,"axis_value":1.0,"script":null)
 ]
 }
+nothing={
+"deadzone": 0.0,
+"events": []
+}
 
 [input_devices]
 

@@ -15,15 +15,16 @@ func _ready() -> void:
     global_position = get_viewport_rect().get_center()
 
 func _input(event: InputEvent) -> void:
-    if event is InputEventMouseMotion:
-        if Input.mouse_mode != Input.MOUSE_MODE_CONFINED_HIDDEN:
-            Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
+    if not OS.has_feature("web_android") and not OS.has_feature("web_ios"):
+        if event is InputEventMouseMotion:
+            if Input.mouse_mode != Input.MOUSE_MODE_CONFINED_HIDDEN:
+                Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 
-        var mevt: InputEventMouseMotion = event
-        mode = InputMode.MOUSE
+            var mevt: InputEventMouseMotion = event
+            mode = InputMode.MOUSE
 
-        if !player.is_paused():
-            global_position = player.aim_crosshair(mevt.global_position)
+            if !player.is_paused():
+                global_position = player.aim_crosshair(mevt.global_position)
 
     if event.is_action_pressed(&"aim_left"):
         _virt_aim.x = -event.get_action_strength(&"aim_left")
