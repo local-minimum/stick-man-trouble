@@ -24,13 +24,15 @@ material = SubResource("StandardMaterial3D_0ltmj")
 collision_layer = 3
 input_ray_pickable = false
 script = ExtResource("1_mekp1")
-cam = NodePath("Camera3D")
+cam = NodePath("Head/Camera3D")
 gun_arm = NodePath("Gun")
 aim_ray = NodePath("Gun Aim Ray")
 gun = NodePath("Gun")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=313019969]
+[node name="Head" type="Node3D" parent="." unique_id=2025562182]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=313019969]
 cull_mask = 1048573
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=268580030]

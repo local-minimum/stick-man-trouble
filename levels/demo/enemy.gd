@@ -6,8 +6,12 @@ static var AIM_ASSIST_LAYER: int = 32
 @export var _ready_position: Node3D
 @export var _ready_transition_duration: float = 0.5
 @export var body: StaticBody3D
+@export var collision_factor: float = 0.2
+@export var collision_shake_factor: float = 0.5
+@export var gun: Gun
 
 var alive: bool = true
+var catapulting: bool
 
 func _enter_tree() -> void:
     if SignalBus.on_hit.connect(_handle_hit) != OK:
@@ -32,6 +36,16 @@ func _handle_hit(enemy: Enemy, _callibre: int) -> void:
     alive = false
     queue_free()
 
+
+func collide(trajectory: Vector3) -> void:
+    var origin: Vector3 = global_position
+    alive = false
+    catapulting = true
+    for i: int in 20:
+        global_position = origin + trajectory * (i + 1.0) / 20.0
+        await get_tree().create_timer(0.015).timeout
+
+    queue_free()
 
 static func get_enemy_parent(n: Node) -> Enemy:
     while n:

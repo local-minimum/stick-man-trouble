@@ -14,6 +14,8 @@ class_name PlayerCharacter
 @export var aim_ray: RayCast3D
 @export var aim_distance: float = 250
 @export var aim_assist_checks: int = 3
+@export var shake_magnitude: float = 0.1
+@export var shake_duration: float = 0.4
 
 @export var gun: Gun
 
@@ -25,9 +27,15 @@ var _road_position: Vector3
 var _speed: float = 0.0
 var _lateral_speed: float = 0.0
 var _paused: bool
+var _shake_time: float
+var _shake_factor: float
 
 func is_paused() -> bool:
     return _paused
+
+func _enter_tree() -> void:
+    if body_entered.connect(_handle_collide_body) != OK:
+        push_error("Failed to connect body collision")
 
 func _input(event: InputEvent) -> void:
     if event.is_action_pressed(&"player_left"):
@@ -48,6 +56,8 @@ func _process(delta: float) -> void:
     if _paused:
         return
 
+    _shake(delta)
+
     _set_current_road_position()
 
     # Update speed
@@ -65,6 +75,33 @@ func _process(delta: float) -> void:
 
     if CrossHair.mode == CrossHair.InputMode.CONTROLLER && Time.get_ticks_msec() - gun.last_shot > 200:
         gun.shoot(aim_ray, _speed)
+
+func _shake(delta: float) -> void:
+    if _shake_time <= 0.0:
+        return
+
+    _shake_time -= delta
+    if _shake_time <= 0.0:
+        _shake_time = 0.0
+        cam.position = Vector3.ZERO
+        return
+
+    var d: float = _shake_factor * shake_magnitude
+    cam.position = cam.position.lerp(Vector3(randf_range(-d, d), randf_range(-d, d), randf_range(-d, d)), 0.7)
+
+func _handle_collide_body(body: Node3D) -> void:
+    var e: Enemy = Enemy.get_enemy_parent(body)
+    if e == null || e.catapulting:
+        return
+
+    var delta: float = max_speed * e.collision_factor
+    _speed = maxf(min_speed, _speed - delta)
+    var direction: Vector3 = (e.global_position - global_position)
+    direction.y = 1
+    direction.normalized()
+    e.collide(direction * _speed)
+    _shake_time = shake_duration
+    _shake_factor = e.collision_shake_factor
 
 func _set_current_road_position():
     # This is a bit of a hack
