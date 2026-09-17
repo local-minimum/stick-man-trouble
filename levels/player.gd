@@ -18,6 +18,7 @@ class_name PlayerCharacter
 @export var shake_duration: float = 0.4
 
 @export var gun: Gun
+@export var aim_target: Node3D
 
 var aim_assist: bool:
     get():

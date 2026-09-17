@@ -61,7 +61,7 @@ func sees(target: Node3D) -> bool:
     if !eyes.is_colliding():
         return false
 
-    return _is_parent(target, eyes.get_collider())
+    return PlayerCharacter.get_player_parent(eyes.get_collider()) != null
 
 static func _is_parent(node: Node, child: Node) -> bool:
     while child != null:

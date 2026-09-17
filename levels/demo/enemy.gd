@@ -51,9 +51,9 @@ func _process(_delta: float) -> void:
     if !alive:
         return
 
-    if gun.phase == EnemyGun.Phase.HELD && gun.sees(player):
+    if gun.phase == EnemyGun.Phase.HELD && gun.sees(player.aim_target):
         gun.target_locked.connect(_handle_shoot, CONNECT_ONE_SHOT)
-        gun.aim(player)
+        gun.aim(player.aim_target)
 
 func _handle_shoot() -> void:
     print_debug("Pew pew")
