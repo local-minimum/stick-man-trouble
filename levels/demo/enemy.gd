@@ -2,13 +2,14 @@ extends Node3D
 class_name Enemy
 
 static var AIM_ASSIST_LAYER: int = 32
+@export var player: PlayerCharacter
 @export var _ready_trigger: ProgressTrigger
 @export var _ready_position: Node3D
 @export var _ready_transition_duration: float = 0.5
 @export var body: StaticBody3D
 @export var collision_factor: float = 0.2
 @export var collision_shake_factor: float = 0.5
-@export var gun: Gun
+@export var gun: EnemyGun
 
 var alive: bool = true
 var catapulting: bool
@@ -36,7 +37,6 @@ func _handle_hit(enemy: Enemy, _callibre: int) -> void:
     alive = false
     queue_free()
 
-
 func collide(trajectory: Vector3) -> void:
     var origin: Vector3 = global_position
     alive = false
@@ -46,6 +46,17 @@ func collide(trajectory: Vector3) -> void:
         await get_tree().create_timer(0.015).timeout
 
     queue_free()
+
+func _process(_delta: float) -> void:
+    if !alive:
+        return
+
+    if gun.phase == EnemyGun.Phase.HELD && gun.sees(player):
+        gun.target_locked.connect(_handle_shoot, CONNECT_ONE_SHOT)
+        gun.aim(player)
+
+func _handle_shoot() -> void:
+    print_debug("Pew pew")
 
 static func get_enemy_parent(n: Node) -> Enemy:
     while n:

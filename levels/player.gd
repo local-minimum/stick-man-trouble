@@ -38,21 +38,27 @@ func _enter_tree() -> void:
         push_error("Failed to connect body collision")
 
 func _input(event: InputEvent) -> void:
-    if event.is_action_pressed(&"player_left"):
-        _lateral_speed = -abs(event.get_action_strength(&"player_left"))
-    elif event.is_action_pressed(&"player_right"):
-        _lateral_speed = abs(event.get_action_strength(&"player_right"))
-    elif event.is_action_released(&"player_left") && _lateral_speed < 0:
-        _lateral_speed = 0.0
-    elif event.is_action_released(&"player_right") && _lateral_speed > 0:
-        _lateral_speed = 0.0
-    elif event.is_action_pressed(&"pause"):
+
+    if event.is_action_pressed(&"pause"):
         _paused = !_paused
-    elif event.is_action_pressed(&"player_shoot"):
+    if event.is_action_pressed(&"player_shoot"):
         if !_paused:
             gun.shoot(aim_ray, _speed)
 
+func _check_input() -> void:
+    if Input.is_action_pressed(&"player_left"):
+        _lateral_speed = -Input.get_action_strength(&"player_left")
+    elif Input.is_action_just_released(&"player_left") && _lateral_speed < 0:
+        _lateral_speed = 0.0
+
+    if Input.is_action_pressed(&"player_right"):
+        _lateral_speed = Input.get_action_strength(&"player_right")
+    elif Input.is_action_just_released(&"player_right") && _lateral_speed > 0:
+        _lateral_speed = 0.0
+
 func _process(delta: float) -> void:
+    _check_input()
+
     if _paused:
         return
 
