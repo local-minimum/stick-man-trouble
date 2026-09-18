@@ -35,6 +35,7 @@ func _handle_hit(enemy: Enemy, _callibre: int) -> void:
         return
 
     alive = false
+    gun.abort_aim()
     queue_free()
 
 func collide(trajectory: Vector3) -> void:

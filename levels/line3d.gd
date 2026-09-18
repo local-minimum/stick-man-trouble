@@ -12,11 +12,15 @@ class_name Line3D
 @export var cap_smooth: int = 5
 ## This does not apply to corners
 @export var constant_scale_texture: bool = true
+@export var mat: Material
 
 var _dirty: bool = false
 
 func _ready() -> void:
-    if !mesh:
+    validate_mesh()
+
+func validate_mesh() -> void:
+    if !mesh || mesh is not ImmediateMesh:
         mesh = ImmediateMesh.new()
 
 func add_global_point(pt: Vector3) -> void:
@@ -100,6 +104,7 @@ func _process(_delta: float) -> void:
         progress += progress_step
 
     mesh.surface_end()
+    mesh.surface_set_material(0, mat)
     _dirty = false
 
 func cap(center: Vector3, pivot: Vector3, thickness: float, camera_origin: Vector3) -> void:

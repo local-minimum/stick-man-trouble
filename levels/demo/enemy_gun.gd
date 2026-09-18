@@ -6,8 +6,6 @@ signal target_locked
 @export var lock_duration: float = 1.0
 @export var inital_aim_width: float = 1.5
 @export var weapon_range: float = 40.0
-@export var aim_left: Line3D
-@export var aim_right: Line3D
 @export var eyes: RayCast3D
 
 
@@ -15,16 +13,7 @@ enum Phase { HELD, AIMING, AIMED, SHOOTING }
 var phase: Phase = Phase.HELD
 
 func _update_aims(progress: float) -> void:
-    var right: Vector3 = _target.global_basis.x
-    var delta: Vector3 =  right * inital_aim_width * 0.5 * (1.0 - progress)
-
-    aim_left.clear_points()
-    aim_left.add_global_point(aim_left.global_position)
-    aim_left.add_global_point(_target.global_position - delta)
-
-    aim_right.clear_points()
-    aim_right.add_global_point(aim_right.global_position)
-    aim_right.add_global_point(_target.global_position + delta)
+    SignalBus.on_aim.emit(eyes, _target, inital_aim_width * (1.0 - progress))
 
 var _target: Node3D
 var aim_tween: Tween
@@ -37,8 +26,7 @@ func aim(target: Node3D) -> void:
     _target = target
 
     _update_aims(0.0)
-    aim_left.visible = true
-    aim_right.visible = true
+
 
     aim_tween = create_tween()
     aim_tween.tween_method(_update_aims, 0.0, 1.0, lock_duration)
@@ -46,10 +34,14 @@ func aim(target: Node3D) -> void:
         func () -> void:
             phase = Phase.AIMED
             target_locked.emit()
-            aim_left.visible = false
-            aim_right.visible = false
+            SignalBus.on_remove_aim.emit(eyes)
             ,
     )
+
+func abort_aim() -> void:
+    if aim_tween && aim_tween.is_running():
+        aim_tween.kill()
+        SignalBus.on_remove_aim.emit(eyes)
 
 func sees(target: Node3D) -> bool:
     if target.global_position.distance_to(global_position) > weapon_range:

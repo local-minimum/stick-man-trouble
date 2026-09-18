@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://kt1wrkr1qim6" path="res://stickmen/stickman1.png" id="1_1nyuo"]
 [ext_resource type="Script" uid="uid://c2m7i1jk0k0j5" path="res://levels/demo/enemy.gd" id="2_dmrsn"]
 [ext_resource type="Texture2D" uid="uid://dqmutfwyn6pt" path="res://stickmen/gun1.png" id="3_dmrsn"]
-[ext_resource type="Script" uid="uid://81c586qut4s3" path="res://levels/line3d.gd" id="4_00ba2"]
 [ext_resource type="Script" uid="uid://b0lw43l0njto7" path="res://levels/demo/enemy_gun.gd" id="4_ilyin"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ltmj"]
@@ -32,19 +31,13 @@ albedo_texture = ExtResource("3_dmrsn")
 material = SubResource("StandardMaterial3D_p7wky")
 size = Vector2(0.5, 0.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ilyin"]
-cull_mode = 2
-shading_mode = 0
-albedo_color = Color(0.9999997, 0.28127453, 0.99731857, 1)
-
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_ilyin"]
-
-[sub_resource type="ImmediateMesh" id="ImmediateMesh_p7wky"]
-
 [node name="StickMan" type="MeshInstance3D" unique_id=1566526407 node_paths=PackedStringArray("body", "gun")]
 mesh = SubResource("QuadMesh_0ltmj")
 script = ExtResource("2_dmrsn")
+_ready_transition_duration = null
 body = NodePath("StickMan Body")
+collision_factor = null
+collision_shake_factor = null
 gun = NodePath("EnemyGun")
 
 [node name="StickMan Body" type="StaticBody3D" parent="." unique_id=782218226]
@@ -61,68 +54,14 @@ input_ray_pickable = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Aim Assist" unique_id=542454912]
 shape = SubResource("BoxShape3D_dmrsn")
 
-[node name="EnemyGun" type="MeshInstance3D" parent="." unique_id=1302993731 node_paths=PackedStringArray("aim_left", "aim_right", "eyes")]
+[node name="EnemyGun" type="MeshInstance3D" parent="." unique_id=1302993731 node_paths=PackedStringArray("eyes")]
 transform = Transform3D(-0.3379668, 0.9407418, 0.027988436, 0.9408481, 0.33846924, -0.015603367, -0.024151962, 0.021059444, -0.9994865, 0.53257394, -0.20220126, 0.0071128006)
 mesh = SubResource("QuadMesh_kjfgv")
 script = ExtResource("4_ilyin")
 weapon_range = 15.0
-aim_left = NodePath("Aim Left")
-aim_right = NodePath("Aim Right")
 eyes = NodePath("Gun Vision")
-
-[node name="Aim Left" type="MeshInstance3D" parent="EnemyGun" unique_id=1671497772]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09390974, 0.1267478, 5.4562e-05)
-material_override = SubResource("StandardMaterial3D_ilyin")
-mesh = SubResource("ImmediateMesh_ilyin")
-script = ExtResource("4_00ba2")
-max_points = 2
-corner_smooth = 0
-cap_smooth = 0
-metadata/_custom_type_script = "uid://81c586qut4s3"
-
-[node name="Aim Right" type="MeshInstance3D" parent="EnemyGun" unique_id=2016652718]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09390974, 0.1267478, 5.4562e-05)
-material_override = SubResource("StandardMaterial3D_ilyin")
-mesh = SubResource("ImmediateMesh_p7wky")
-script = ExtResource("4_00ba2")
-max_points = 2
-corner_smooth = 0
-cap_smooth = 0
-metadata/_custom_type_script = "uid://81c586qut4s3"
 
 [node name="Gun Vision" type="RayCast3D" parent="EnemyGun" unique_id=693738637]
-transform = Transform3D(1, 7.858034e-09, 0, 7.799827e-09, 1, 0, 0, 0, 1, -0.09390974, 0.12674779, 5.4562464e-05)
-enabled = false
-collision_mask = 3
-collide_with_areas = true
-
-[node name="EnemyGun2" type="MeshInstance3D" parent="." unique_id=486960913 node_paths=PackedStringArray("aim_left", "aim_right", "eyes")]
-transform = Transform3D(-0.3379668, 0.9407418, 0.027988436, 0.9408481, 0.33846924, -0.015603367, -0.024151962, 0.021059444, -0.9994865, 0.53257394, -0.20220126, 0.0071128006)
-mesh = SubResource("QuadMesh_kjfgv")
-script = ExtResource("4_ilyin")
-aim_left = NodePath("Aim Left")
-aim_right = NodePath("Aim Right")
-eyes = NodePath("Gun Vision")
-
-[node name="Aim Left" type="MeshInstance3D" parent="EnemyGun2" unique_id=1681909047]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09390974, 0.1267478, 5.4562e-05)
-material_override = SubResource("StandardMaterial3D_ilyin")
-script = ExtResource("4_00ba2")
-max_points = 2
-corner_smooth = 0
-cap_smooth = 0
-metadata/_custom_type_script = "uid://81c586qut4s3"
-
-[node name="Aim Right" type="MeshInstance3D" parent="EnemyGun2" unique_id=1083475698]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09390974, 0.1267478, 5.4562e-05)
-material_override = SubResource("StandardMaterial3D_ilyin")
-script = ExtResource("4_00ba2")
-max_points = 2
-corner_smooth = 0
-cap_smooth = 0
-metadata/_custom_type_script = "uid://81c586qut4s3"
-
-[node name="Gun Vision" type="RayCast3D" parent="EnemyGun2" unique_id=1941455478]
 transform = Transform3D(1, 7.858034e-09, 0, 7.799827e-09, 1, 0, 0, 0, 1, -0.09390974, 0.12674779, 5.4562464e-05)
 enabled = false
 collision_mask = 3
