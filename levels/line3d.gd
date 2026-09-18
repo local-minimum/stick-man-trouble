@@ -18,6 +18,7 @@ var _dirty: bool = false
 
 func _ready() -> void:
     validate_mesh()
+    _dirty = !_points.is_empty()
 
 func validate_mesh() -> void:
     if !mesh || mesh is not ImmediateMesh:

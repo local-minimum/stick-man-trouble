@@ -1,52 +1,35 @@
 [gd_scene format=3 uid="uid://b2hsijtjoewht"]
 
-[ext_resource type="Texture2D" uid="uid://dqmutfwyn6pt" path="res://stickmen/gun1.png" id="1_6uqi0"]
-[ext_resource type="Script" uid="uid://b0lw43l0njto7" path="res://levels/demo/enemy_gun.gd" id="2_ppyta"]
+[ext_resource type="Script" uid="uid://23futxxkeq4r" path="res://tester.gd" id="1_8uh7m"]
 [ext_resource type="Script" uid="uid://81c586qut4s3" path="res://levels/line3d.gd" id="3_ykrsh"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_00ba2"]
-transparency = 1
-cull_mode = 2
-shading_mode = 0
-albedo_texture = ExtResource("1_6uqi0")
+[sub_resource type="SphereMesh" id="SphereMesh_kjfgv"]
+radius = 0.1
+height = 0.2
 
-[sub_resource type="QuadMesh" id="QuadMesh_g14j6"]
-material = SubResource("StandardMaterial3D_00ba2")
-size = Vector2(0.5, 0.5)
+[node name="Test" type="Node3D" unique_id=1761986520 node_paths=PackedStringArray("a", "b", "line")]
+script = ExtResource("1_8uh7m")
+a = NodePath("MeshInstance3D")
+b = NodePath("MeshInstance3D2")
+line = NodePath("Node3D/Line3D")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vbegm"]
-cull_mode = 2
-shading_mode = 0
-albedo_color = Color(0.9999997, 0.28127453, 0.99731857, 1)
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1621447904]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 2.9838853, -1.3042978e-07)
 
-[node name="EnemyGun2" type="MeshInstance3D" unique_id=2042603270 node_paths=PackedStringArray("aim_left", "aim_right", "eyes")]
-mesh = SubResource("QuadMesh_g14j6")
-script = ExtResource("2_ppyta")
-weapon_range = 15.0
-aim_left = NodePath("Aim Left")
-aim_right = NodePath("Aim Right")
-eyes = NodePath("Gun Vision")
+[node name="Node3D" type="Node3D" parent="." unique_id=1339017174]
+transform = Transform3D(1.6708239, 0, 0.73745614, 0, 3.820521, 0, -0.52937967, 0, 2.327553, -0.6455116, 0, 0.3916626)
 
-[node name="Aim Left" type="MeshInstance3D" parent="." unique_id=797767582]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09390974, 0.1267478, 5.4562e-05)
-material_override = SubResource("StandardMaterial3D_vbegm")
+[node name="Line3D" type="MeshInstance3D" parent="Node3D" unique_id=36703494]
+transform = Transform3D(-0.47827289, 0.6997198, 0.5307045, -0.5373048, 0.24485898, -0.80706114, -0.69466436, -0.67114556, 0.2588534, -0.5384557, 0.81695557, 0.56043935)
 script = ExtResource("3_ykrsh")
-max_points = 2
 corner_smooth = 0
 cap_smooth = 0
 metadata/_custom_type_script = "uid://81c586qut4s3"
 
-[node name="Aim Right" type="MeshInstance3D" parent="." unique_id=1339629896]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09390974, 0.1267478, 5.4562e-05)
-material_override = SubResource("StandardMaterial3D_vbegm")
-script = ExtResource("3_ykrsh")
-max_points = 2
-corner_smooth = 0
-cap_smooth = 0
-metadata/_custom_type_script = "uid://81c586qut4s3"
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1469867463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1394067, 0.7666626, -0.07593548)
+mesh = SubResource("SphereMesh_kjfgv")
 
-[node name="Gun Vision" type="RayCast3D" parent="." unique_id=1056805498]
-transform = Transform3D(1, 7.858034e-09, 0, 7.799827e-09, 1, 0, 0, 0, 1, -0.09390974, 0.12674779, 5.4562464e-05)
-enabled = false
-collision_mask = 3
-collide_with_areas = true
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1932885195]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27247763, 0, -0.45115116)
+mesh = SubResource("SphereMesh_kjfgv")

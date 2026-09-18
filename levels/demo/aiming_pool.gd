@@ -19,12 +19,14 @@ func _new_line() -> Line3D:
 
     line = Line3D.new()
     add_child(line)
+
     line.start_thickness = far_thickness
     line.end_thickness = near_thickness
     line.corner_smooth = 0
     line.cap_smooth = 0
     line.max_points = 2
     line.mat = mat
+
     line.validate_mesh()
 
     return line
