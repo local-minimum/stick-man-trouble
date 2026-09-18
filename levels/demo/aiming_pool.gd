@@ -1,6 +1,7 @@
 extends Node3D
 
-@export var thickness: float = 0.1
+@export var far_thickness: float = 0.1
+@export var near_thickness: float = 0.01
 @export var mat: Material
 
 var _pool: Array[Line3D]
@@ -18,8 +19,8 @@ func _new_line() -> Line3D:
 
     line = Line3D.new()
     add_child(line)
-    line.start_thickness = thickness
-    line.end_thickness = thickness
+    line.start_thickness = far_thickness
+    line.end_thickness = near_thickness
     line.corner_smooth = 0
     line.cap_smooth = 0
     line.max_points = 2
@@ -43,9 +44,8 @@ func _handle_aim(from: Node3D, to: Node3D, width: float) -> void:
     var ortho: Vector3 = to.global_basis.x
     for idx: int in 2:
         var aim: Line3D = aims[idx]
-        aim.clear_points()
-        aim.add_global_point(from.global_position)
-        aim.add_global_point(to.global_position + ortho * (-0.5 if idx == 0 else 0.5) * width)
+        aim.set_global_point(from.global_position, 0)
+        aim.set_global_point(to.global_position + ortho * (-0.5 if idx == 0 else 0.5) * width, 1)
 
 func _handle_remove_aim(from: Node3D) -> void:
     if !_active.has(from):

@@ -30,20 +30,22 @@ func _handle_shoot(calibre: int, speed: float, from: Vector3, to: Vector3, hit: 
     shot.look_at(to)
     shot.visible = true
 
-    var collided: bool = false
-    var velocity: Vector3 = (to - from).normalized() * (speed + _bullet_speeds[calibre])
-    var collision_distance: float = from.distance_squared_to(to)
-    while !collided:
-        await get_tree().create_timer(0.02).timeout
-        shot.global_position += velocity * 0.02
-        collided = shot.global_position.distance_squared_to(from) >= collision_distance
+    var t: Tween = create_tween()
+    t.tween_property(
+        shot,
+        "global_position",
+        to,
+        from.distance_to(to) / (_bullet_speeds[calibre] + speed),
+    )
 
-    if is_instance_valid(hit):
-        var enemy: Enemy = Enemy.get_enemy_parent(hit)
-        if enemy:
-            SignalBus.on_hit.emit(enemy, calibre)
-        elif hit:
-            print_debug(hit)
+    t.finished.connect(func () -> void:
+        if is_instance_valid(hit):
+            var enemy: Enemy = Enemy.get_enemy_parent(hit)
+            if enemy:
+                SignalBus.on_hit.emit(enemy, calibre)
+            elif hit:
+                print_debug(hit)
 
-    shot.visible = false
-    pool.append(shot)
+        shot.visible = false
+        pool.append(shot)
+    )

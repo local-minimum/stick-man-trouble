@@ -39,14 +39,12 @@ func _handle_hit(enemy: Enemy, _callibre: int) -> void:
     queue_free()
 
 func collide(trajectory: Vector3) -> void:
-    var origin: Vector3 = global_position
     alive = false
     catapulting = true
-    for i: int in 20:
-        global_position = origin + trajectory * (i + 1.0) / 20.0
-        await get_tree().create_timer(0.015).timeout
+    var t: Tween = create_tween()
+    t.tween_property(self, "global_position", global_position + trajectory, 0.3)
+    t.finished.connect(queue_free)
 
-    queue_free()
 
 func _process(_delta: float) -> void:
     if !alive:

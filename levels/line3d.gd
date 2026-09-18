@@ -29,6 +29,13 @@ func add_global_point(pt: Vector3) -> void:
     _points.append(to_local(pt))
     _dirty = true
 
+func set_global_point(pt: Vector3, idx: int) -> void:
+    while _points.size() <= idx:
+        _points.append(Vector3.ZERO)
+
+    _points[idx] = to_local(pt)
+    _dirty = true
+
 func clear_points() -> void:
     _points.clear()
     mesh.clear_surfaces()

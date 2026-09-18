@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://g5vsbi8yoejb" path="res://stickmen/crosshair.png" id="4_fnxub"]
 [ext_resource type="Script" uid="uid://c232q6or5bw7j" path="res://levels/demo/goal_trigger.gd" id="4_okht7"]
 [ext_resource type="Script" uid="uid://brri2niek4kvq" path="res://levels/demo/cross_hair.gd" id="5_sg4r5"]
-[ext_resource type="PackedScene" uid="uid://b2hsijtjoewht" path="res://test.tscn" id="5_sk378"]
 [ext_resource type="Script" uid="uid://db14kf60nf47a" path="res://levels/demo/bullets_pool.gd" id="6_sg4r5"]
 [ext_resource type="Script" uid="uid://bf3y11gflumgr" path="res://levels/demo/virtual_controls.gd" id="8_bj7pd"]
 [ext_resource type="Script" uid="uid://bhg0lynjmhwc0" path="res://levels/demo/aiming_pool.gd" id="11_hopu4"]
@@ -319,10 +318,9 @@ shape = SubResource("BoxShape3D_okht7")
 [node name="StickMan2 - Ready Pos" type="Node3D" parent="World/Houses/MeshInstance3D11" unique_id=1634460393]
 transform = Transform3D(-1.1453022, 0, -0.9686506, 0, 1.5, 0, 0.9686506, 0, -1.1453022, -4.309276, 3.1039324, 2.8909302)
 
-[node name="StickMan Right 1" parent="World/Houses/MeshInstance3D11" unique_id=655201333 node_paths=PackedStringArray("player", "gun") instance=ExtResource("2_mvxq3")]
+[node name="StickMan Right 1" parent="World/Houses/MeshInstance3D11" unique_id=655201333 node_paths=PackedStringArray("player") instance=ExtResource("2_mvxq3")]
 transform = Transform3D(-1.4076616, 0, -0.51816076, 0, 1.5000002, 0, 0.51816076, 0, -1.4076616, -4.309276, 3.0836864, 4.038246)
 player = NodePath("../../../../Player")
-gun = NodePath("../../../Bonus Gun")
 
 [node name="StickMan Right Sneak" parent="World/Houses/MeshInstance3D11" unique_id=1964583779 node_paths=PackedStringArray("player", "_ready_trigger", "_ready_position") instance=ExtResource("2_mvxq3")]
 transform = Transform3D(-1.4733976, 0, -0.28124827, 0, 1.5, 0, 0.28124827, 0, -1.4733976, 0.32750607, 3.1039324, 2.5835)
@@ -484,9 +482,6 @@ mesh = SubResource("BoxMesh_mvxq3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Houses/MeshInstance3D23/StaticBody3D" unique_id=763876459]
 shape = SubResource("BoxShape3D_t5nvq")
-
-[node name="Bonus Gun" parent="World" unique_id=1564645098 instance=ExtResource("5_sk378")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.78051496, 5.0836864, -56.961754)
 
 [node name="Ground" type="MeshInstance3D" parent="World" unique_id=1426158253]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.02, 0)

@@ -34,10 +34,7 @@ size = Vector2(0.5, 0.5)
 [node name="StickMan" type="MeshInstance3D" unique_id=1566526407 node_paths=PackedStringArray("body", "gun")]
 mesh = SubResource("QuadMesh_0ltmj")
 script = ExtResource("2_dmrsn")
-_ready_transition_duration = null
 body = NodePath("StickMan Body")
-collision_factor = null
-collision_shake_factor = null
 gun = NodePath("EnemyGun")
 
 [node name="StickMan Body" type="StaticBody3D" parent="." unique_id=782218226]
@@ -58,7 +55,8 @@ shape = SubResource("BoxShape3D_dmrsn")
 transform = Transform3D(-0.3379668, 0.9407418, 0.027988436, 0.9408481, 0.33846924, -0.015603367, -0.024151962, 0.021059444, -0.9994865, 0.53257394, -0.20220126, 0.0071128006)
 mesh = SubResource("QuadMesh_kjfgv")
 script = ExtResource("4_ilyin")
-weapon_range = 15.0
+inital_aim_width = 2.0
+weapon_range = 30.0
 eyes = NodePath("Gun Vision")
 
 [node name="Gun Vision" type="RayCast3D" parent="EnemyGun" unique_id=693738637]
