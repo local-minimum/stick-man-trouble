@@ -35,7 +35,10 @@ func _handle_hit(enemy: Enemy, _callibre: int) -> void:
         return
 
     alive = false
-    gun.abort_aim()
+    if gun:
+        gun.abort_aim()
+
+    SignalBus.on_remove_aim.emit(gun.eyes)
     queue_free()
 
 func collide(trajectory: Vector3) -> void:
@@ -50,12 +53,22 @@ func _process(_delta: float) -> void:
     if !alive:
         return
 
-    if gun.phase == EnemyGun.Phase.HELD && gun.sees(player.aim_target):
-        gun.target_locked.connect(_handle_shoot, CONNECT_ONE_SHOT)
-        gun.aim(player.aim_target)
+    if player.is_beyond(self):
+        alive = false
+
+    if gun:
+        if gun.phase == EnemyGun.Phase.HELD && gun.sees(player.aim_target):
+            gun.target_locked.connect(_handle_shoot, CONNECT_ONE_SHOT)
+            gun.aim(player.aim_target)
+
 
 func _handle_shoot() -> void:
-    print_debug("Pew pew")
+    SignalBus.on_aim.emit(gun.eyes, player, 0.0)
+    player.hit()
+    await get_tree().create_timer(0.2).timeout
+    SignalBus.on_remove_aim.emit(gun.eyes)
+    await get_tree().create_timer(0.1).timeout
+    gun.phase = EnemyGun.Phase.HELD
 
 static func get_enemy_parent(n: Node) -> Enemy:
     while n:

@@ -64,6 +64,3 @@ transform = Transform3D(1, 7.858034e-09, 0, 7.799827e-09, 1, 0, 0, 0, 1, -0.0939
 enabled = false
 collision_mask = 3
 collide_with_areas = true
-
-[connection signal="input_event" from="StickMan Body" to="." method="_on_static_body_3d_input_event"]
-[connection signal="input_event" from="Aim Assist" to="." method="_on_static_body_3d_input_event"]

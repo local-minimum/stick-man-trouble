@@ -31,6 +31,10 @@ var _paused: bool
 var _shake_time: float
 var _shake_factor: float
 
+
+func is_beyond(other: Node3D, sq_margin: float = 2.0) -> bool:
+    return (road_direction * global_position).length_squared() + sq_margin > (road_direction * other.global_position).length_squared()
+
 func is_paused() -> bool:
     return _paused
 
@@ -95,6 +99,11 @@ func _shake(delta: float) -> void:
 
     var d: float = _shake_factor * shake_magnitude
     cam.position = cam.position.lerp(Vector3(randf_range(-d, d), randf_range(-d, d), randf_range(-d, d)), 0.7)
+
+func hit() -> void:
+    _shake_time = 0.1
+    _shake_factor = 0.4
+    _speed = maxf(min_speed, _speed - maxf(_speed * 0.1, acceleration * 3.0))
 
 func _handle_collide_body(body: Node3D) -> void:
     var e: Enemy = Enemy.get_enemy_parent(body)

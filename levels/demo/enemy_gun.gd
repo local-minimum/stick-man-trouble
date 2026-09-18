@@ -33,8 +33,8 @@ func aim(target: Node3D) -> void:
     aim_tween.finished.connect(
         func () -> void:
             phase = Phase.AIMED
-            target_locked.emit()
             SignalBus.on_remove_aim.emit(eyes)
+            target_locked.emit()
             ,
     )
 
