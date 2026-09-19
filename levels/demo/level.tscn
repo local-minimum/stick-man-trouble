@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://g5vsbi8yoejb" path="res://stickmen/crosshair.png" id="4_fnxub"]
 [ext_resource type="Script" uid="uid://c232q6or5bw7j" path="res://levels/demo/goal_trigger.gd" id="4_okht7"]
 [ext_resource type="Script" uid="uid://brri2niek4kvq" path="res://levels/demo/cross_hair.gd" id="5_sg4r5"]
+[ext_resource type="Texture2D" uid="uid://davg4weee8dpn" path="res://stickmen/goal.png" id="5_siudo"]
 [ext_resource type="FontFile" uid="uid://5t86722v0xfd" path="res://mrsmonsterexpand.ttf" id="6_3vw2u"]
 [ext_resource type="Script" uid="uid://db14kf60nf47a" path="res://levels/demo/bullets_pool.gd" id="6_sg4r5"]
 [ext_resource type="Script" uid="uid://bklhfqc3472g1" path="res://levels/demo/timer.gd" id="7_hvglj"]
@@ -30,6 +31,14 @@ sky = SubResource("Sky_o183l")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kjfgv"]
 size = Vector3(9.279541, 1, 4.5997314)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ltmj"]
+transparency = 1
+albedo_texture = ExtResource("5_siudo")
+
+[sub_resource type="QuadMesh" id="QuadMesh_kjfgv"]
+material = SubResource("StandardMaterial3D_0ltmj")
+size = Vector2(7, 4)
 
 [sub_resource type="BoxMesh" id="BoxMesh_kjfgv"]
 size = Vector3(10, 4, 10)
@@ -290,6 +299,10 @@ script = ExtResource("4_okht7")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Road/RoadSegment16/Goal Trigger" unique_id=642045532]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015014648, 0, 1.7998657)
 shape = SubResource("BoxShape3D_kjfgv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Road/RoadSegment16/Goal Trigger" unique_id=1876930195]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 1.8944592)
+mesh = SubResource("QuadMesh_kjfgv")
 
 [node name="RoadSegment17" parent="World/Road" unique_id=308008358 instance=ExtResource("1_7mxt6")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -191)
