@@ -158,6 +158,18 @@ shadow_enabled = true
 [node name="RoadSegment0" parent="World/Road" unique_id=1548397879 instance=ExtResource("1_7mxt6")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 12)
 
+[node name="RoadSegment20" parent="World/Road" unique_id=1346448154 instance=ExtResource("1_7mxt6")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 24)
+
+[node name="RoadSegment21" parent="World/Road" unique_id=2081759193 instance=ExtResource("1_7mxt6")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 36)
+
+[node name="RoadSegment22" parent="World/Road" unique_id=867669940 instance=ExtResource("1_7mxt6")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 48)
+
+[node name="RoadSegment23" parent="World/Road" unique_id=574778285 instance=ExtResource("1_7mxt6")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 60)
+
 [node name="RoadSegment1" parent="World/Road" unique_id=187301611 instance=ExtResource("1_7mxt6")]
 
 [node name="RoadSegment2" parent="World/Road" unique_id=1238729670 instance=ExtResource("1_7mxt6")]
@@ -284,6 +296,15 @@ mesh = SubResource("BoxMesh_kjfgv")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Houses/MeshInstance3D2/StaticBody3D" unique_id=5675183]
 shape = SubResource("BoxShape3D_o183l")
 
+[node name="MeshInstance3D26" type="MeshInstance3D" parent="World/Houses" unique_id=894542602]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.159943, 2, 11.481431)
+mesh = SubResource("BoxMesh_kjfgv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Houses/MeshInstance3D26" unique_id=1467655102]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Houses/MeshInstance3D26/StaticBody3D" unique_id=753820783]
+shape = SubResource("BoxShape3D_o183l")
+
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="World/Houses" unique_id=1879932711]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 2, 0)
 mesh = SubResource("BoxMesh_kjfgv")
@@ -291,6 +312,15 @@ mesh = SubResource("BoxMesh_kjfgv")
 [node name="StaticBody3D" type="StaticBody3D" parent="World/Houses/MeshInstance3D3" unique_id=381615156]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Houses/MeshInstance3D3/StaticBody3D" unique_id=1665462063]
+shape = SubResource("BoxShape3D_mvxq3")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="World/Houses" unique_id=1948359053]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.830383, 2, 37.52266)
+mesh = SubResource("BoxMesh_kjfgv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Houses/MeshInstance3D6" unique_id=1127804967]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Houses/MeshInstance3D6/StaticBody3D" unique_id=1646719887]
 shape = SubResource("BoxShape3D_mvxq3")
 
 [node name="MeshInstance3D20" type="MeshInstance3D" parent="World/Houses" unique_id=1710726962]
@@ -320,13 +350,13 @@ mesh = SubResource("BoxMesh_kjfgv")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Houses/MeshInstance3D4/StaticBody3D" unique_id=77358867]
 shape = SubResource("BoxShape3D_sg4r5")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="World/Houses" unique_id=406347912]
+[node name="House2" type="MeshInstance3D" parent="World/Houses" unique_id=406347912]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 2, -16)
 mesh = SubResource("BoxMesh_kjfgv")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Houses/MeshInstance3D5" unique_id=502166951]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Houses/House2" unique_id=502166951]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Houses/MeshInstance3D5/StaticBody3D" unique_id=2106972579]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Houses/House2/StaticBody3D" unique_id=2106972579]
 shape = SubResource("BoxShape3D_fm7pb")
 
 [node name="MeshInstance3D11" type="MeshInstance3D" parent="World/Houses" unique_id=1503196279]
@@ -391,12 +421,39 @@ transform = Transform3D(1.4198534, 0, -0.48375267, 0, 1.5, 0, 0.48375267, 0, 1.4
 player = NodePath("../../../../../../Player")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="World/Houses" unique_id=281669943]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 4, -28)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.266159, 4, -30.446144)
 mesh = SubResource("BoxMesh_o183l")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="World/Houses/MeshInstance3D7" unique_id=938221600]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Houses/MeshInstance3D7/StaticBody3D" unique_id=322171458]
+shape = SubResource("BoxShape3D_3vw2u")
+
+[node name="MeshInstance3D24" type="MeshInstance3D" parent="World/Houses" unique_id=844741540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.928528, 4, 12.4012375)
+mesh = SubResource("BoxMesh_o183l")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Houses/MeshInstance3D24" unique_id=36478342]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Houses/MeshInstance3D24/StaticBody3D" unique_id=43215373]
+shape = SubResource("BoxShape3D_3vw2u")
+
+[node name="MeshInstance3D28" type="MeshInstance3D" parent="World/Houses" unique_id=1756416598]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3737335, 4, 37.727676)
+mesh = SubResource("BoxMesh_o183l")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Houses/MeshInstance3D28" unique_id=827712813]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Houses/MeshInstance3D28/StaticBody3D" unique_id=42024130]
+shape = SubResource("BoxShape3D_3vw2u")
+
+[node name="MeshInstance3D25" type="MeshInstance3D" parent="World/Houses" unique_id=2100400833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.598961, 4, 24.714663)
+mesh = SubResource("BoxMesh_o183l")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Houses/MeshInstance3D25" unique_id=1442567633]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Houses/MeshInstance3D25/StaticBody3D" unique_id=44686645]
 shape = SubResource("BoxShape3D_3vw2u")
 
 [node name="MeshInstance3D9" type="MeshInstance3D" parent="World/Houses" unique_id=782251962]
@@ -442,6 +499,15 @@ mesh = SubResource("BoxMesh_mvxq3")
 [node name="StaticBody3D" type="StaticBody3D" parent="World/Houses/MeshInstance3D10" unique_id=1583034727]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Houses/MeshInstance3D10/StaticBody3D" unique_id=2115808975]
+shape = SubResource("BoxShape3D_1nety")
+
+[node name="MeshInstance3D27" type="MeshInstance3D" parent="World/Houses" unique_id=248561477]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.820389, 6, 24.751343)
+mesh = SubResource("BoxMesh_mvxq3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Houses/MeshInstance3D27" unique_id=720558664]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Houses/MeshInstance3D27/StaticBody3D" unique_id=1820849784]
 shape = SubResource("BoxShape3D_1nety")
 
 [node name="MeshInstance3D18" type="MeshInstance3D" parent="World/Houses" unique_id=1891156479]
@@ -511,6 +577,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.02, 0)
 mesh = SubResource("PlaneMesh_kjfgv")
 
 [node name="Player" parent="." unique_id=331298481 instance=ExtResource("3_mvxq3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 56)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1780518744]
 

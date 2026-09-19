@@ -32,8 +32,8 @@ var _shake_time: float
 var _shake_factor: float
 
 
-func is_beyond(other: Node3D, sq_margin: float = 2.0) -> bool:
-    return (road_direction * global_position).length_squared() + sq_margin > (road_direction * other.global_position).length_squared()
+func is_beyond(other: Node3D, margin: float = 2.0) -> bool:
+    return road_direction.dot(global_position) + margin > road_direction.dot(other.global_position)
 
 func is_paused() -> bool:
     return _paused
