@@ -41,6 +41,10 @@ func is_paused() -> bool:
 func _enter_tree() -> void:
     if body_entered.connect(_handle_collide_body) != OK:
         push_error("Failed to connect body collision")
+    SignalBus.on_start_level.connect(_handle_level_start)
+
+func _handle_level_start(_tick: int) -> void:
+    _paused = false
 
 func _input(event: InputEvent) -> void:
 

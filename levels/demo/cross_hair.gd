@@ -11,6 +11,12 @@ static var mode: InputMode = InputMode.MOUSE
 var _virt_aim: Vector2
 const DEBUG_TOUCH: bool = false
 
+func _enter_tree() -> void:
+    SignalBus.on_start_level.connect(_handle_level_start)
+
+func _handle_level_start(_tick: int) -> void:
+    show()
+
 func _ready() -> void:
     if OS.has_feature("web_android") and not OS.has_feature("web_ios"):
         mode = InputMode.CONTROLLER
@@ -18,6 +24,7 @@ func _ready() -> void:
     if !DEBUG_TOUCH:
         Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
     global_position = get_viewport_rect().get_center()
+    hide()
 
 func _input(event: InputEvent) -> void:
     if !DEBUG_TOUCH && not OS.has_feature("web_android") and not OS.has_feature("web_ios"):
