@@ -13,8 +13,10 @@
 [ext_resource type="ArrayMesh" uid="uid://dubncfiybgoo" path="res://models/house1.obj" id="6_sws0b"]
 [ext_resource type="Script" uid="uid://bklhfqc3472g1" path="res://levels/demo/timer.gd" id="7_hvglj"]
 [ext_resource type="Texture2D" uid="uid://bclcfbnvhk257" path="res://models/house1.png" id="7_jeqay"]
+[ext_resource type="ArrayMesh" uid="uid://cjkx0mt2lg3b" path="res://models/house2.obj" id="8_55buu"]
 [ext_resource type="Script" uid="uid://bf3y11gflumgr" path="res://levels/demo/virtual_controls.gd" id="8_bj7pd"]
 [ext_resource type="Script" uid="uid://cikm6fl6ywwyd" path="res://levels/demo/count_down.gd" id="8_hvglj"]
+[ext_resource type="Texture2D" uid="uid://cavhflkdlu3eh" path="res://models/house2.png" id="9_vi3pt"]
 [ext_resource type="Script" uid="uid://bhg0lynjmhwc0" path="res://levels/demo/aiming_pool.gd" id="11_hopu4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7mxt6"]
@@ -70,11 +72,16 @@ size = Vector3(10, 4, 10)
 [sub_resource type="BoxShape3D" id="BoxShape3D_bj7pd"]
 size = Vector3(10, 4, 10)
 
-[sub_resource type="BoxMesh" id="BoxMesh_7mxt6"]
-size = Vector3(10, 6, 10)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mqwlk"]
+shading_mode = 0
+albedo_texture = ExtResource("9_vi3pt")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sk378"]
 size = Vector3(10, 6, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j7rmy"]
+shading_mode = 0
+albedo_texture = ExtResource("9_vi3pt")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hopu4"]
 size = Vector3(10, 6, 10)
@@ -89,9 +96,6 @@ size = Vector3(10, 8, 10)
 size = Vector3(10, 8, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_siudo"]
-size = Vector3(10, 8, 10)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_sws0b"]
 size = Vector3(10, 8, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jeqay"]
@@ -432,8 +436,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_tuv64")
 shape = SubResource("BoxShape3D_bj7pd")
 
 [node name="House" type="MeshInstance3D" parent="World/Houses" unique_id=1747825559]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 3, -28)
-mesh = SubResource("BoxMesh_7mxt6")
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -11, 3, -28)
+mesh = ExtResource("8_55buu")
+surface_material_override/0 = SubResource("StandardMaterial3D_mqwlk")
 
 [node name="HouseBody" type="StaticBody3D" parent="World/Houses/House" unique_id=1239708030]
 
@@ -441,16 +446,17 @@ mesh = SubResource("BoxMesh_7mxt6")
 shape = SubResource("BoxShape3D_sk378")
 
 [node name="StickMan Left 2" parent="World/Houses/House" unique_id=318716684 node_paths=PackedStringArray("player") instance=ExtResource("2_mvxq3")]
-transform = Transform3D(1.253569, 0, 0.8237505, 0, 1.5, 0, -0.8237505, 0, 1.253569, 4.7972603, 4.076456, -2.3809605)
+transform = Transform3D(-1.4688869, 0, 0.3039276, 0, 1.5, 0, -0.3039276, 0, -1.4688869, -3.8308206, 3.7765102, -2.3809586)
 player = NodePath("../../../../Player")
 
 [node name="StickMan Left 1" parent="World/Houses/House" unique_id=2048614791 node_paths=PackedStringArray("player") instance=ExtResource("2_mvxq3")]
-transform = Transform3D(1.253569, 0, 0.8237505, 0, 1.5, 0, -0.8237505, 0, 1.253569, 4.2864847, 4.0624743, 2.828205)
+transform = Transform3D(-1.3401735, 0, 0.6737474, 0, 1.5, 0, -0.6737474, 0, -1.3401735, -4.3415947, 3.7625284, 2.828207)
 player = NodePath("../../../../Player")
 
 [node name="MeshInstance3D17" type="MeshInstance3D" parent="World/Houses" unique_id=527803880]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 3, -94)
-mesh = SubResource("BoxMesh_7mxt6")
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -12, 3, -94)
+mesh = ExtResource("8_55buu")
+surface_material_override/0 = SubResource("StandardMaterial3D_j7rmy")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="World/Houses/MeshInstance3D17" unique_id=714818870]
 
@@ -458,8 +464,18 @@ mesh = SubResource("BoxMesh_7mxt6")
 shape = SubResource("BoxShape3D_hopu4")
 
 [node name="StickMan Left 3" parent="World/Houses/MeshInstance3D17/StaticBody3D/CollisionShape3D" unique_id=2133527285 node_paths=PackedStringArray("player") instance=ExtResource("2_mvxq3")]
-transform = Transform3D(1.4198534, 0, -0.48375267, 0, 1.5, 0, 0.48375267, 0, 1.4198534, 4.701068, 4.115737, 0.5785141)
+transform = Transform3D(-1.4715055, 0, -0.2909845, 0, 1.5, 0, 0.2909845, 0, -1.4715055, -4.637035, 3.7656083, 0.5785141)
 player = NodePath("../../../../../../Player")
+
+[node name="MeshInstance3D29" type="MeshInstance3D" parent="World/Houses" unique_id=709331588]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 12.628466, 3, -85.72087)
+mesh = ExtResource("8_55buu")
+surface_material_override/0 = SubResource("StandardMaterial3D_j7rmy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Houses/MeshInstance3D29" unique_id=945810197]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Houses/MeshInstance3D29/StaticBody3D" unique_id=412709406]
+shape = SubResource("BoxShape3D_hopu4")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="World/Houses" unique_id=281669943]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.266159, 4, -30.446144)
@@ -514,15 +530,6 @@ mesh = SubResource("BoxMesh_o183l")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Houses/MeshInstance3D14/StaticBody3D" unique_id=795336843]
 shape = SubResource("BoxShape3D_siudo")
-
-[node name="MeshInstance3D15" type="MeshInstance3D" parent="World/Houses" unique_id=1192251961]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.168678, 4, -85.10489)
-mesh = SubResource("BoxMesh_o183l")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Houses/MeshInstance3D15" unique_id=1335384874]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Houses/MeshInstance3D15/StaticBody3D" unique_id=494066546]
-shape = SubResource("BoxShape3D_sws0b")
 
 [node name="MeshInstance3D16" type="MeshInstance3D" parent="World/Houses" unique_id=1608626182]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.168678, 4, -97.10489)
