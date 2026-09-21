@@ -17,7 +17,9 @@
 [ext_resource type="Script" uid="uid://bf3y11gflumgr" path="res://levels/demo/virtual_controls.gd" id="8_bj7pd"]
 [ext_resource type="Script" uid="uid://cikm6fl6ywwyd" path="res://levels/demo/count_down.gd" id="8_hvglj"]
 [ext_resource type="Texture2D" uid="uid://cavhflkdlu3eh" path="res://models/house2.png" id="9_vi3pt"]
+[ext_resource type="ArrayMesh" uid="uid://c6p1l4w1kvilj" path="res://models/house3.obj" id="10_mqwlk"]
 [ext_resource type="Script" uid="uid://bhg0lynjmhwc0" path="res://levels/demo/aiming_pool.gd" id="11_hopu4"]
+[ext_resource type="Texture2D" uid="uid://cykrmb30wxjas" path="res://models/house3.png" id="11_j7rmy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7mxt6"]
 sky_top_color = Color(0.34768772, 0.15259627, 0.07439866, 1)
@@ -86,17 +88,42 @@ albedo_texture = ExtResource("9_vi3pt")
 [sub_resource type="BoxShape3D" id="BoxShape3D_hopu4"]
 size = Vector3(10, 6, 10)
 
-[sub_resource type="BoxMesh" id="BoxMesh_o183l"]
-size = Vector3(10, 8, 10)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_og17l"]
+shading_mode = 0
+albedo_texture = ExtResource("11_j7rmy")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3vw2u"]
 size = Vector3(10, 8, 10)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t5nvq"]
+shading_mode = 0
+albedo_texture = ExtResource("11_j7rmy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oho0o"]
+shading_mode = 0
+albedo_texture = ExtResource("11_j7rmy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8le2y"]
+shading_mode = 0
+albedo_texture = ExtResource("11_j7rmy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1vqgu"]
+shading_mode = 0
+albedo_texture = ExtResource("11_j7rmy")
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_hvglj"]
 size = Vector3(10, 8, 10)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c5pi2"]
+shading_mode = 0
+albedo_texture = ExtResource("11_j7rmy")
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_siudo"]
 size = Vector3(10, 8, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dq8j3"]
+shading_mode = 0
+albedo_texture = ExtResource("11_j7rmy")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jeqay"]
 size = Vector3(10, 8, 10)
@@ -478,8 +505,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_j7rmy")
 shape = SubResource("BoxShape3D_hopu4")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="World/Houses" unique_id=281669943]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.266159, 4, -30.446144)
-mesh = SubResource("BoxMesh_o183l")
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 10.266159, 4, -30.446144)
+mesh = ExtResource("10_mqwlk")
+surface_material_override/0 = SubResource("StandardMaterial3D_og17l")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="World/Houses/MeshInstance3D7" unique_id=938221600]
 
@@ -487,8 +515,9 @@ mesh = SubResource("BoxMesh_o183l")
 shape = SubResource("BoxShape3D_3vw2u")
 
 [node name="MeshInstance3D24" type="MeshInstance3D" parent="World/Houses" unique_id=844741540]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.928528, 4, 12.4012375)
-mesh = SubResource("BoxMesh_o183l")
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 12.928528, 4, 12.4012375)
+mesh = ExtResource("10_mqwlk")
+surface_material_override/0 = SubResource("StandardMaterial3D_t5nvq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="World/Houses/MeshInstance3D24" unique_id=36478342]
 
@@ -497,7 +526,8 @@ shape = SubResource("BoxShape3D_3vw2u")
 
 [node name="MeshInstance3D28" type="MeshInstance3D" parent="World/Houses" unique_id=1756416598]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3737335, 4, 37.727676)
-mesh = SubResource("BoxMesh_o183l")
+mesh = ExtResource("10_mqwlk")
+surface_material_override/0 = SubResource("StandardMaterial3D_oho0o")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="World/Houses/MeshInstance3D28" unique_id=827712813]
 
@@ -505,8 +535,9 @@ mesh = SubResource("BoxMesh_o183l")
 shape = SubResource("BoxShape3D_3vw2u")
 
 [node name="MeshInstance3D25" type="MeshInstance3D" parent="World/Houses" unique_id=2100400833]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.598961, 4, 24.714663)
-mesh = SubResource("BoxMesh_o183l")
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 10.598961, 4, 24.714663)
+mesh = ExtResource("10_mqwlk")
+surface_material_override/0 = SubResource("StandardMaterial3D_8le2y")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="World/Houses/MeshInstance3D25" unique_id=1442567633]
 
@@ -514,8 +545,9 @@ mesh = SubResource("BoxMesh_o183l")
 shape = SubResource("BoxShape3D_3vw2u")
 
 [node name="MeshInstance3D9" type="MeshInstance3D" parent="World/Houses" unique_id=782251962]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 4, -49)
-mesh = SubResource("BoxMesh_o183l")
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 11, 4, -49)
+mesh = ExtResource("10_mqwlk")
+surface_material_override/0 = SubResource("StandardMaterial3D_1vqgu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="World/Houses/MeshInstance3D9" unique_id=1147048867]
 
@@ -524,7 +556,8 @@ shape = SubResource("BoxShape3D_hvglj")
 
 [node name="MeshInstance3D14" type="MeshInstance3D" parent="World/Houses" unique_id=213412814]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.831322, 4, -81.10489)
-mesh = SubResource("BoxMesh_o183l")
+mesh = ExtResource("10_mqwlk")
+surface_material_override/0 = SubResource("StandardMaterial3D_c5pi2")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="World/Houses/MeshInstance3D14" unique_id=310124057]
 
@@ -532,8 +565,9 @@ mesh = SubResource("BoxMesh_o183l")
 shape = SubResource("BoxShape3D_siudo")
 
 [node name="MeshInstance3D16" type="MeshInstance3D" parent="World/Houses" unique_id=1608626182]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.168678, 4, -97.10489)
-mesh = SubResource("BoxMesh_o183l")
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 14.168678, 4, -97.10489)
+mesh = ExtResource("10_mqwlk")
+surface_material_override/0 = SubResource("StandardMaterial3D_dq8j3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="World/Houses/MeshInstance3D16" unique_id=2085135432]
 
