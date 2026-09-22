@@ -22,6 +22,10 @@
 [ext_resource type="Texture2D" uid="uid://cykrmb30wxjas" path="res://models/house3.png" id="11_j7rmy"]
 [ext_resource type="ArrayMesh" uid="uid://cqn38782do8hw" path="res://models/house4.obj" id="12_og17l"]
 [ext_resource type="Texture2D" uid="uid://chcjhdhlv6edw" path="res://models/house4.png" id="13_t5nvq"]
+[ext_resource type="Texture2D" uid="uid://01a1yoybhox" path="res://models/tree_1.png" id="14_t5nvq"]
+[ext_resource type="Texture2D" uid="uid://d243jdg76a2ok" path="res://models/tree_2.png" id="15_oho0o"]
+[ext_resource type="Texture2D" uid="uid://ciou23l87kpl8" path="res://models/tree_4.png" id="16_1vqgu"]
+[ext_resource type="Texture2D" uid="uid://cx88wqbfymsl2" path="res://models/tree_3.png" id="16_8le2y"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7mxt6"]
 sky_top_color = Color(0.34768772, 0.15259627, 0.07439866, 1)
@@ -163,6 +167,42 @@ albedo_color = Color(0.12941177, 0.33333334, 0.16078432, 1)
 [sub_resource type="PlaneMesh" id="PlaneMesh_kjfgv"]
 material = SubResource("StandardMaterial3D_7mxt6")
 size = Vector2(2000, 2000)
+
+[sub_resource type="QuadMesh" id="QuadMesh_0ltmj"]
+size = Vector2(5, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kr4f2"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("14_t5nvq")
+
+[sub_resource type="QuadMesh" id="QuadMesh_8le2y"]
+size = Vector2(5, 7)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wtj7t"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("15_oho0o")
+
+[sub_resource type="QuadMesh" id="QuadMesh_c5pi2"]
+size = Vector2(5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_amfpx"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("16_1vqgu")
+
+[sub_resource type="QuadMesh" id="QuadMesh_1vqgu"]
+size = Vector2(5, 8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bk6fk"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("16_8le2y")
 
 [sub_resource type="LabelSettings" id="LabelSettings_kjfgv"]
 font = ExtResource("6_3vw2u")
@@ -351,6 +391,24 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0
 
 [node name="RoadSegment19" parent="World/Road" unique_id=325253950 instance=ExtResource("1_7mxt6")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -215)
+
+[node name="RoadSegment24" parent="World/Road" unique_id=77209984 instance=ExtResource("1_7mxt6")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -227)
+
+[node name="RoadSegment25" parent="World/Road" unique_id=1227193795 instance=ExtResource("1_7mxt6")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -239)
+
+[node name="RoadSegment26" parent="World/Road" unique_id=440693351 instance=ExtResource("1_7mxt6")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -251)
+
+[node name="RoadSegment27" parent="World/Road" unique_id=1598463474 instance=ExtResource("1_7mxt6")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -263)
+
+[node name="RoadSegment28" parent="World/Road" unique_id=487960105 instance=ExtResource("1_7mxt6")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -275)
+
+[node name="RoadSegment29" parent="World/Road" unique_id=1996374904 instance=ExtResource("1_7mxt6")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -287)
 
 [node name="Houses" type="Node3D" parent="World" unique_id=94305248]
 
@@ -670,6 +728,258 @@ shape = SubResource("BoxShape3D_t5nvq")
 [node name="Ground" type="MeshInstance3D" parent="World" unique_id=1426158253]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.02, 0)
 mesh = SubResource("PlaneMesh_kjfgv")
+
+[node name="Forest" type="Node3D" parent="World" unique_id=1774039266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.503262, 4.9211683, -171.31311)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Forest" unique_id=808893376]
+mesh = SubResource("QuadMesh_0ltmj")
+surface_material_override/0 = SubResource("StandardMaterial3D_kr4f2")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="World/Forest" unique_id=2111957886]
+transform = Transform3D(0.95879644, 0, -0.28409398, 0, 1, 0, 0.28409398, 0, 0.95879644, 5.5604486, -1.7326026, -9.775497)
+mesh = SubResource("QuadMesh_8le2y")
+surface_material_override/0 = SubResource("StandardMaterial3D_wtj7t")
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="World/Forest" unique_id=1752699745]
+transform = Transform3D(0.95879644, 0, -0.28409398, 0, 1, 0, 0.28409398, 0, 0.95879644, -0.5095444, -1.7326045, 5.5116425)
+mesh = SubResource("QuadMesh_8le2y")
+surface_material_override/0 = SubResource("StandardMaterial3D_wtj7t")
+
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="World/Forest" unique_id=1748742626]
+transform = Transform3D(0.95879644, 0, -0.28409398, 0, 1, 0, 0.28409398, 0, 0.95879644, 6.134901, -1.7326045, 2.4787445)
+mesh = SubResource("QuadMesh_8le2y")
+surface_material_override/0 = SubResource("StandardMaterial3D_wtj7t")
+
+[node name="MeshInstance3D18" type="MeshInstance3D" parent="World/Forest" unique_id=2019414884]
+transform = Transform3D(0.95879644, 0, -0.28409398, 0, 1, 0, 0.28409398, 0, 0.95879644, -13.002745, -1.7326045, 9.432022)
+mesh = SubResource("QuadMesh_8le2y")
+surface_material_override/0 = SubResource("StandardMaterial3D_wtj7t")
+
+[node name="MeshInstance3D19" type="MeshInstance3D" parent="World/Forest" unique_id=743452910]
+transform = Transform3D(0.95879644, 0, -0.28409398, 0, 1, 0, 0.28409398, 0, 0.95879644, -23.987038, -1.7326026, -1.0430756)
+mesh = SubResource("QuadMesh_8le2y")
+surface_material_override/0 = SubResource("StandardMaterial3D_wtj7t")
+
+[node name="MeshInstance3D20" type="MeshInstance3D" parent="World/Forest" unique_id=1618415538]
+transform = Transform3D(0.95879644, 0, -0.28409398, 0, 1, 0, 0.28409398, 0, 0.95879644, -17.12785, -1.7326007, -4.9316406)
+mesh = SubResource("QuadMesh_8le2y")
+surface_material_override/0 = SubResource("StandardMaterial3D_wtj7t")
+
+[node name="MeshInstance3D21" type="MeshInstance3D" parent="World/Forest" unique_id=734586838]
+transform = Transform3D(0.95879644, 0, -0.28409398, 0, 1, 0, 0.28409398, 0, 0.95879644, -32.130608, -1.7326007, -9.469406)
+mesh = SubResource("QuadMesh_8le2y")
+surface_material_override/0 = SubResource("StandardMaterial3D_wtj7t")
+
+[node name="MeshInstance3D22" type="MeshInstance3D" parent="World/Forest" unique_id=498522814]
+transform = Transform3D(0.95879644, 0, -0.28409398, 0, 1, 0, 0.28409398, 0, 0.95879644, -14.034178, -1.7326007, 18.07721)
+mesh = SubResource("QuadMesh_8le2y")
+surface_material_override/0 = SubResource("StandardMaterial3D_wtj7t")
+
+[node name="MeshInstance3D23" type="MeshInstance3D" parent="World/Forest" unique_id=345105177]
+transform = Transform3D(0.95879644, 0, -0.28409398, 0, 1, 0, 0.28409398, 0, 0.95879644, 0.9557781, -1.7326007, 15.949097)
+mesh = SubResource("QuadMesh_8le2y")
+surface_material_override/0 = SubResource("StandardMaterial3D_wtj7t")
+
+[node name="MeshInstance3D24" type="MeshInstance3D" parent="World/Forest" unique_id=539367164]
+transform = Transform3D(0.95879644, 0, -0.28409398, 0, 1, 0, 0.28409398, 0, 0.95879644, 7.9894676, -1.7326007, -36.622406)
+mesh = SubResource("QuadMesh_8le2y")
+surface_material_override/0 = SubResource("StandardMaterial3D_wtj7t")
+
+[node name="MeshInstance3D25" type="MeshInstance3D" parent="World/Forest" unique_id=2025201949]
+transform = Transform3D(0.95879644, 0, -0.28409398, 0, 1, 0, 0.28409398, 0, 0.95879644, -23.723911, -1.7326007, -59.500336)
+mesh = SubResource("QuadMesh_8le2y")
+surface_material_override/0 = SubResource("StandardMaterial3D_wtj7t")
+
+[node name="MeshInstance3D26" type="MeshInstance3D" parent="World/Forest" unique_id=565222301]
+transform = Transform3D(0.95879644, 0, -0.28409398, 0, 1, 0, 0.28409398, 0, 0.95879644, 1.0491543, -1.7325969, -81.541336)
+mesh = SubResource("QuadMesh_8le2y")
+surface_material_override/0 = SubResource("StandardMaterial3D_wtj7t")
+
+[node name="MeshInstance3D27" type="MeshInstance3D" parent="World/Forest" unique_id=1418722448]
+transform = Transform3D(0.95879644, 0, -0.28409398, 0, 1, 0, 0.28409398, 0, 0.95879644, 16.387398, -1.7325969, -64.619064)
+mesh = SubResource("QuadMesh_8le2y")
+surface_material_override/0 = SubResource("StandardMaterial3D_wtj7t")
+
+[node name="MeshInstance3D28" type="MeshInstance3D" parent="World/Forest" unique_id=494836446]
+transform = Transform3D(0.95879644, 0, -0.28409398, 0, 1, 0, 0.28409398, 0, 0.95879644, 11.91272, -1.7325969, -109.734985)
+mesh = SubResource("QuadMesh_8le2y")
+surface_material_override/0 = SubResource("StandardMaterial3D_wtj7t")
+
+[node name="MeshInstance3D29" type="MeshInstance3D" parent="World/Forest" unique_id=41630382]
+transform = Transform3D(0.95879644, 0, -0.28409398, 0, 1, 0, 0.28409398, 0, 0.95879644, -27.338524, -1.7325969, -98.21741)
+mesh = SubResource("QuadMesh_8le2y")
+surface_material_override/0 = SubResource("StandardMaterial3D_wtj7t")
+
+[node name="MeshInstance3D30" type="MeshInstance3D" parent="World/Forest" unique_id=1986465832]
+transform = Transform3D(0.95879644, 0, -0.28409398, 0, 1, 0, 0.28409398, 0, 0.95879644, -32.599583, -1.7325969, -32.808716)
+mesh = SubResource("QuadMesh_8le2y")
+surface_material_override/0 = SubResource("StandardMaterial3D_wtj7t")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="World/Forest" unique_id=908671543]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -24)
+mesh = SubResource("QuadMesh_0ltmj")
+surface_material_override/0 = SubResource("StandardMaterial3D_kr4f2")
+
+[node name="MeshInstance3D43" type="MeshInstance3D" parent="World/Forest" unique_id=882789792]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10235596, -2.456112, -18.068436)
+mesh = SubResource("QuadMesh_c5pi2")
+surface_material_override/0 = SubResource("StandardMaterial3D_amfpx")
+
+[node name="MeshInstance3D44" type="MeshInstance3D" parent="World/Forest" unique_id=138268115]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.067234, -2.456112, -16.647232)
+mesh = SubResource("QuadMesh_c5pi2")
+surface_material_override/0 = SubResource("StandardMaterial3D_amfpx")
+
+[node name="MeshInstance3D48" type="MeshInstance3D" parent="World/Forest" unique_id=808780005]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.683369, -2.456108, -48.68367)
+mesh = SubResource("QuadMesh_c5pi2")
+surface_material_override/0 = SubResource("StandardMaterial3D_amfpx")
+
+[node name="MeshInstance3D49" type="MeshInstance3D" parent="World/Forest" unique_id=479214016]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.821186, -2.456108, -50.756332)
+mesh = SubResource("QuadMesh_c5pi2")
+surface_material_override/0 = SubResource("StandardMaterial3D_amfpx")
+
+[node name="MeshInstance3D50" type="MeshInstance3D" parent="World/Forest" unique_id=42392523]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.131834, -2.456108, -93.477295)
+mesh = SubResource("QuadMesh_c5pi2")
+surface_material_override/0 = SubResource("StandardMaterial3D_amfpx")
+
+[node name="MeshInstance3D45" type="MeshInstance3D" parent="World/Forest" unique_id=304826438]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.899218, -2.456112, 0.747818)
+mesh = SubResource("QuadMesh_c5pi2")
+surface_material_override/0 = SubResource("StandardMaterial3D_amfpx")
+
+[node name="MeshInstance3D46" type="MeshInstance3D" parent="World/Forest" unique_id=1019777173]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.899218, -2.1242862, 16.11737)
+mesh = SubResource("QuadMesh_c5pi2")
+surface_material_override/0 = SubResource("StandardMaterial3D_amfpx")
+
+[node name="MeshInstance3D47" type="MeshInstance3D" parent="World/Forest" unique_id=253291505]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.899221, -2.4103599, 19.920303)
+mesh = SubResource("QuadMesh_c5pi2")
+surface_material_override/0 = SubResource("StandardMaterial3D_amfpx")
+
+[node name="MeshInstance3D31" type="MeshInstance3D" parent="World/Forest" unique_id=1691797041]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.686134, -0.97156954, -15.964127)
+mesh = SubResource("QuadMesh_1vqgu")
+surface_material_override/0 = SubResource("StandardMaterial3D_bk6fk")
+
+[node name="MeshInstance3D32" type="MeshInstance3D" parent="World/Forest" unique_id=1066710953]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.351204, -0.97156954, -17.882996)
+mesh = SubResource("QuadMesh_1vqgu")
+surface_material_override/0 = SubResource("StandardMaterial3D_bk6fk")
+
+[node name="MeshInstance3D33" type="MeshInstance3D" parent="World/Forest" unique_id=1256558980]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.829926, -0.97157145, -20.953384)
+mesh = SubResource("QuadMesh_1vqgu")
+surface_material_override/0 = SubResource("StandardMaterial3D_bk6fk")
+
+[node name="MeshInstance3D34" type="MeshInstance3D" parent="World/Forest" unique_id=889317274]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1069336, -0.97157145, 10.95282)
+mesh = SubResource("QuadMesh_1vqgu")
+surface_material_override/0 = SubResource("StandardMaterial3D_bk6fk")
+
+[node name="MeshInstance3D35" type="MeshInstance3D" parent="World/Forest" unique_id=1741141161]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.665466, -0.97157335, 3.1182861)
+mesh = SubResource("QuadMesh_1vqgu")
+surface_material_override/0 = SubResource("StandardMaterial3D_bk6fk")
+
+[node name="MeshInstance3D36" type="MeshInstance3D" parent="World/Forest" unique_id=2054336181]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.05538, -0.97157335, 14.211624)
+mesh = SubResource("QuadMesh_1vqgu")
+surface_material_override/0 = SubResource("StandardMaterial3D_bk6fk")
+
+[node name="MeshInstance3D37" type="MeshInstance3D" parent="World/Forest" unique_id=1000822065]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.50689125, -0.97157335, -47.127365)
+mesh = SubResource("QuadMesh_1vqgu")
+surface_material_override/0 = SubResource("StandardMaterial3D_bk6fk")
+
+[node name="MeshInstance3D38" type="MeshInstance3D" parent="World/Forest" unique_id=1322299118]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.365625, -0.97157335, -57.630585)
+mesh = SubResource("QuadMesh_1vqgu")
+surface_material_override/0 = SubResource("StandardMaterial3D_bk6fk")
+
+[node name="MeshInstance3D39" type="MeshInstance3D" parent="World/Forest" unique_id=1939871505]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.574438, -0.97157335, -82.44891)
+mesh = SubResource("QuadMesh_1vqgu")
+surface_material_override/0 = SubResource("StandardMaterial3D_bk6fk")
+
+[node name="MeshInstance3D40" type="MeshInstance3D" parent="World/Forest" unique_id=1817238231]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.51016045, -0.97157717, -112.48108)
+mesh = SubResource("QuadMesh_1vqgu")
+surface_material_override/0 = SubResource("StandardMaterial3D_bk6fk")
+
+[node name="MeshInstance3D41" type="MeshInstance3D" parent="World/Forest" unique_id=429066998]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.273603, -0.97157717, -53.37596)
+mesh = SubResource("QuadMesh_1vqgu")
+surface_material_override/0 = SubResource("StandardMaterial3D_bk6fk")
+
+[node name="MeshInstance3D42" type="MeshInstance3D" parent="World/Forest" unique_id=1545006849]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.46131, -0.97157717, -37.6613)
+mesh = SubResource("QuadMesh_1vqgu")
+surface_material_override/0 = SubResource("StandardMaterial3D_bk6fk")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="World/Forest" unique_id=696700869]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -14)
+mesh = SubResource("QuadMesh_0ltmj")
+surface_material_override/0 = SubResource("StandardMaterial3D_kr4f2")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="World/Forest" unique_id=325072142]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.487148, 0, 8.125824)
+mesh = SubResource("QuadMesh_0ltmj")
+surface_material_override/0 = SubResource("StandardMaterial3D_kr4f2")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="World/Forest" unique_id=1664740945]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.108738, 0, 11.931671)
+mesh = SubResource("QuadMesh_0ltmj")
+surface_material_override/0 = SubResource("StandardMaterial3D_kr4f2")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="World/Forest" unique_id=1419081341]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.81842, 1.9073486e-06, -9.93956)
+mesh = SubResource("QuadMesh_0ltmj")
+surface_material_override/0 = SubResource("StandardMaterial3D_kr4f2")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="World/Forest" unique_id=1833846436]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7583065, 1.9073486e-06, 14.682541)
+mesh = SubResource("QuadMesh_0ltmj")
+surface_material_override/0 = SubResource("StandardMaterial3D_kr4f2")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="World/Forest" unique_id=1885352524]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.648163, 1.9073486e-06, -36.97789)
+mesh = SubResource("QuadMesh_0ltmj")
+surface_material_override/0 = SubResource("StandardMaterial3D_kr4f2")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="World/Forest" unique_id=1605768497]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.108741, 1.9073486e-06, -59.397385)
+mesh = SubResource("QuadMesh_0ltmj")
+surface_material_override/0 = SubResource("StandardMaterial3D_kr4f2")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="World/Forest" unique_id=1570182314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.942688, 1.9073486e-06, -74.08574)
+mesh = SubResource("QuadMesh_0ltmj")
+surface_material_override/0 = SubResource("StandardMaterial3D_kr4f2")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="World/Forest" unique_id=265398842]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3821983, 1.9073486e-06, -99.324524)
+mesh = SubResource("QuadMesh_0ltmj")
+surface_material_override/0 = SubResource("StandardMaterial3D_kr4f2")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="World/Forest" unique_id=1992934631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.751474, -1.9073486e-06, -113.17029)
+mesh = SubResource("QuadMesh_0ltmj")
+surface_material_override/0 = SubResource("StandardMaterial3D_kr4f2")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="World/Forest" unique_id=1056620085]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.838373, -1.9073486e-06, -80.234055)
+mesh = SubResource("QuadMesh_0ltmj")
+surface_material_override/0 = SubResource("StandardMaterial3D_kr4f2")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="World/Forest" unique_id=1509489834]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.061293, -1.9073486e-06, -49.035873)
+mesh = SubResource("QuadMesh_0ltmj")
+surface_material_override/0 = SubResource("StandardMaterial3D_kr4f2")
 
 [node name="Player" parent="." unique_id=331298481 instance=ExtResource("3_mvxq3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 56)
