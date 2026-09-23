@@ -12,26 +12,38 @@
 [ext_resource type="Texture2D" uid="uid://daikfo57o8i1q" path="res://models/tree_5.png" id="6_c5pi2"]
 [ext_resource type="Script" uid="uid://db14kf60nf47a" path="res://levels/demo/bullets_pool.gd" id="6_sg4r5"]
 [ext_resource type="ArrayMesh" uid="uid://dubncfiybgoo" path="res://models/house1.obj" id="6_sws0b"]
+[ext_resource type="Texture2D" uid="uid://bn4bwq5p2fmgm" path="res://stickmen/tomb1.png" id="6_uotv2"]
+[ext_resource type="Texture2D" uid="uid://bmg4kfd8kdwoy" path="res://stickmen/tomb2.png" id="7_2ir8i"]
 [ext_resource type="Texture2D" uid="uid://cnyy3607emuxl" path="res://models/tree_6.png" id="7_dq8j3"]
 [ext_resource type="Script" uid="uid://bklhfqc3472g1" path="res://levels/demo/timer.gd" id="7_hvglj"]
 [ext_resource type="Texture2D" uid="uid://bclcfbnvhk257" path="res://models/house1.png" id="7_jeqay"]
 [ext_resource type="ArrayMesh" uid="uid://cjkx0mt2lg3b" path="res://models/house2.obj" id="8_55buu"]
 [ext_resource type="Script" uid="uid://bf3y11gflumgr" path="res://levels/demo/virtual_controls.gd" id="8_bj7pd"]
+[ext_resource type="Texture2D" uid="uid://cywv1kmosiryd" path="res://stickmen/tomb5.png" id="8_byvlu"]
 [ext_resource type="Script" uid="uid://cikm6fl6ywwyd" path="res://levels/demo/count_down.gd" id="8_hvglj"]
 [ext_resource type="Texture2D" uid="uid://3sfclmob1527" path="res://models/tree_7.png" id="8_kh8ip"]
+[ext_resource type="Texture2D" uid="uid://b5shqa7oyga0c" path="res://stickmen/tomb3.png" id="9_altug"]
 [ext_resource type="Texture2D" uid="uid://cavhflkdlu3eh" path="res://models/house2.png" id="9_vi3pt"]
 [ext_resource type="Texture2D" uid="uid://co7egtqyiflfo" path="res://models/tree_8.png" id="9_wtj7t"]
 [ext_resource type="Texture2D" uid="uid://b6i3dw6vmxsg7" path="res://models/tree_9.png" id="10_bk6fk"]
 [ext_resource type="ArrayMesh" uid="uid://c6p1l4w1kvilj" path="res://models/house3.obj" id="10_mqwlk"]
+[ext_resource type="Texture2D" uid="uid://drby0uad8c76u" path="res://stickmen/tomb4.png" id="10_wg1du"]
 [ext_resource type="Texture2D" uid="uid://cs5ov6cnd1b6c" path="res://models/tree_10.png" id="11_amfpx"]
 [ext_resource type="Script" uid="uid://bhg0lynjmhwc0" path="res://levels/demo/aiming_pool.gd" id="11_hopu4"]
 [ext_resource type="Texture2D" uid="uid://cykrmb30wxjas" path="res://models/house3.png" id="11_j7rmy"]
+[ext_resource type="Texture2D" uid="uid://ytm5g1yeyniy" path="res://stickmen/tomb6.png" id="11_xohij"]
+[ext_resource type="Texture2D" uid="uid://dcv476p8lgjdi" path="res://stickmen/tomb7.png" id="12_k5rvu"]
 [ext_resource type="ArrayMesh" uid="uid://cqn38782do8hw" path="res://models/house4.obj" id="12_og17l"]
+[ext_resource type="Texture2D" uid="uid://bfncn1nva2u68" path="res://stickmen/tomb_loot.png" id="13_2ir8i"]
 [ext_resource type="Texture2D" uid="uid://chcjhdhlv6edw" path="res://models/house4.png" id="13_t5nvq"]
 [ext_resource type="Texture2D" uid="uid://01a1yoybhox" path="res://models/tree_1.png" id="14_t5nvq"]
 [ext_resource type="Texture2D" uid="uid://d243jdg76a2ok" path="res://models/tree_2.png" id="15_oho0o"]
 [ext_resource type="Texture2D" uid="uid://ciou23l87kpl8" path="res://models/tree_4.png" id="16_1vqgu"]
 [ext_resource type="Texture2D" uid="uid://cx88wqbfymsl2" path="res://models/tree_3.png" id="16_8le2y"]
+[ext_resource type="Texture2D" uid="uid://d2haqu4l4sbsg" path="res://stickmen/lake1.png" id="16_byvlu"]
+[ext_resource type="Texture2D" uid="uid://40ut76mm2k3b" path="res://stickmen/wave1.png" id="17_xohij"]
+[ext_resource type="Texture2D" uid="uid://c2w4jm2lxcbs" path="res://stickmen/wave2.png" id="18_k5rvu"]
+[ext_resource type="Texture2D" uid="uid://box2m4gl3l02l" path="res://stickmen/wave4.png" id="19_xohij"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7mxt6"]
 sky_top_color = Color(0.34768772, 0.15259627, 0.07439866, 1)
@@ -60,6 +72,40 @@ albedo_texture = ExtResource("5_siudo")
 material = SubResource("StandardMaterial3D_0ltmj")
 size = Vector2(7, 4)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_2qm51"]
+size = Vector3(0.6218567, 0.6642761, 0.07366943)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ltmj"]
+size = Vector3(1.0792236, 1.0968018, 0.07366943)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yn11l"]
+size = Vector3(1.2597809, 0.86880493, 0.07366943)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ouoin"]
+size = Vector3(0.89845276, 0.7901001, 0.07366943)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0jbqw"]
+size = Vector3(0.9853592, 1.011383, 0.07366943)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2b7qq"]
+size = Vector3(1.0181923, 0.88056946, 0.07366943)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qvk0v"]
+size = Vector3(1.2561665, 1.0458927, 0.07366943)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_byvlu"]
+size = Vector3(1.1659319, 1.7301011, 0.07366943)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tuv64"]
+shading_mode = 0
+albedo_texture = ExtResource("7_jeqay")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_whlyx"]
+size = Vector3(7.491699, 4, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kr4f2"]
+size = Vector3(2.840454, 0.8480835, 9.835815)
+
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_dq8j3"]
 data = PackedVector3Array(0.055, -2.0715, 0.318, 0.055, 0.0809, 0.728, 0.055, -2.0805, -0.0117999995, 0.055, -1.9913, 1.3519, 0.055, 0.0809, 0.728, 0.055, -2.0715, 0.318, 0.055, -2.5662, 0.3001, 0.055, -2.0715, 0.318, 0.055, -2.0805, -0.0117999995, 0.055, -2.5795, -0.0341, 0.055, -2.5662, 0.3001, 0.055, -2.0805, -0.0117999995, 0.055, -2.1116, -1.2149999, 0.055, -2.0805, -0.0117999995, 0.055, 0.0809, 0.728, 0.055, 2.5498, -0.34149998, 0.055, -2.1116, -1.2149999, 0.055, 0.0809, 0.728, -0.055, -2.0805, -0.0117999995, -0.055, 0.0809, 0.728, -0.055, -2.0715, 0.318, -0.055, -1.9913, 1.3519, -0.055, -2.0715, 0.318, -0.055, 0.0809, 0.728, -0.055, -2.5662, 0.3001, -0.055, -2.0805, -0.0117999995, -0.055, -2.0715, 0.318, -0.055, -2.5795, -0.0341, -0.055, -2.0805, -0.0117999995, -0.055, -2.5662, 0.3001, -0.055, -2.1116, -1.2149999, -0.055, 0.0809, 0.728, -0.055, -2.0805, -0.0117999995, -0.055, 2.5498, -0.34149998, -0.055, 0.0809, 0.728, -0.055, -2.1116, -1.2149999, -0.055, -1.9913, 1.3519, 0.055, 0.0809, 0.728, 0.055, -1.9913, 1.3519, -0.055, 0.0809, 0.728, 0.055, 0.0809, 0.728, -0.055, -1.9913, 1.3519, -0.055, 2.5498, -0.34149998, 0.055, 0.0809, 0.728, -0.055, 0.0809, 0.728, 0.055, 2.5498, -0.34149998, 0.055, 0.0809, 0.728, -0.055, 2.5498, -0.34149998, -0.055, -2.1116, -1.2149999, 0.055, 2.5498, -0.34149998, -0.055, 2.5498, -0.34149998, 0.055, -2.1116, -1.2149999, 0.055, 2.5498, -0.34149998, -0.055, -2.1116, -1.2149999, -0.055, -2.1116, -1.2149999, 0.055, -2.0805, -0.0117999995, 0.055, -2.1116, -1.2149999, -0.055, -2.0805, -0.0117999995, 0.055, -2.0805, -0.0117999995, -0.055, -2.1116, -1.2149999, -0.055, -2.0805, -0.0117999995, 0.055, -2.5795, -0.0341, 0.055, -2.0805, -0.0117999995, -0.055, -2.5795, -0.0341, 0.055, -2.5795, -0.0341, -0.055, -2.0805, -0.0117999995, -0.055, -2.5795, -0.0341, 0.055, -2.5662, 0.3001, 0.055, -2.5795, -0.0341, -0.055, -2.5662, 0.3001, 0.055, -2.5662, 0.3001, -0.055, -2.5795, -0.0341, -0.055, -2.5662, 0.3001, 0.055, -2.0715, 0.318, 0.055, -2.5662, 0.3001, -0.055, -2.0715, 0.318, 0.055, -2.0715, 0.318, -0.055, -2.5662, 0.3001, -0.055, -2.0715, 0.318, 0.055, -1.9913, 1.3519, 0.055, -2.0715, 0.318, -0.055, -1.9913, 1.3519, 0.055, -1.9913, 1.3519, -0.055, -2.0715, 0.318)
 
@@ -78,17 +124,17 @@ data = PackedVector3Array(0.03, -0.88439995, 0.1637, 0.03, -0.12109999, 0.4287, 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0qops"]
 data = PackedVector3Array(0.035, -0.92649996, 0.26909998, 0.035, -0.2609, 0.5876, 0.035, -0.92649996, 0.0077, 0.035, -0.9102, 0.8204, 0.035, -0.2609, 0.5876, 0.035, -0.92649996, 0.26909998, 0.035, -0.2609, 0.5876, 0.035, 0.7355, 0.1629, 0.035, -0.92649996, 0.0077, 0.035, -1.5512999, 0.015899999, 0.035, -0.92649996, 0.26909998, 0.035, -0.92649996, 0.0077, 0.035, -1.6003, 0.265, 0.035, -0.92649996, 0.26909998, 0.035, -1.5512999, 0.015899999, 0.035, -0.951, -0.8621, 0.035, -0.92649996, 0.0077, 0.035, 0.7355, 0.1629, 0.035, 1.5848999, -0.0168, 0.035, -0.951, -0.8621, 0.035, 0.7355, 0.1629, -0.035, -1.5512999, 0.015899999, -0.035, -0.92649996, 0.0077, -0.035, -0.92649996, 0.26909998, -0.035, -1.6003, 0.265, -0.035, -1.5512999, 0.015899999, -0.035, -0.92649996, 0.26909998, -0.035, -0.2609, 0.5876, -0.035, -0.92649996, 0.26909998, -0.035, -0.92649996, 0.0077, -0.035, -0.9102, 0.8204, -0.035, -0.92649996, 0.26909998, -0.035, -0.2609, 0.5876, -0.035, 0.7355, 0.1629, -0.035, -0.2609, 0.5876, -0.035, -0.92649996, 0.0077, -0.035, -0.951, -0.8621, -0.035, 0.7355, 0.1629, -0.035, -0.92649996, 0.0077, -0.035, 1.5848999, -0.0168, -0.035, 0.7355, 0.1629, -0.035, -0.951, -0.8621, -0.035, -0.9102, 0.8204, 0.035, -0.2609, 0.5876, 0.035, -0.9102, 0.8204, -0.035, -0.2609, 0.5876, 0.035, -0.2609, 0.5876, -0.035, -0.9102, 0.8204, -0.035, -0.2609, 0.5876, 0.035, 0.7355, 0.1629, 0.035, -0.2609, 0.5876, -0.035, 0.7355, 0.1629, 0.035, 0.7355, 0.1629, -0.035, -0.2609, 0.5876, -0.035, 0.7355, 0.1629, 0.035, 1.5848999, -0.0168, 0.035, 0.7355, 0.1629, -0.035, 1.5848999, -0.0168, 0.035, 1.5848999, -0.0168, -0.035, 0.7355, 0.1629, -0.035, 1.5848999, -0.0168, 0.035, -0.951, -0.8621, 0.035, 1.5848999, -0.0168, -0.035, -0.951, -0.8621, 0.035, -0.951, -0.8621, -0.035, 1.5848999, -0.0168, -0.035, -0.951, -0.8621, 0.035, -0.92649996, 0.0077, 0.035, -0.951, -0.8621, -0.035, -0.92649996, 0.0077, 0.035, -0.92649996, 0.0077, -0.035, -0.951, -0.8621, -0.035, -0.92649996, 0.0077, 0.035, -1.5512999, 0.015899999, 0.035, -0.92649996, 0.0077, -0.035, -1.5512999, 0.015899999, 0.035, -1.5512999, 0.015899999, -0.035, -0.92649996, 0.0077, -0.035, -1.5512999, 0.015899999, 0.035, -1.6003, 0.265, 0.035, -1.5512999, 0.015899999, -0.035, -1.6003, 0.265, 0.035, -1.6003, 0.265, -0.035, -1.5512999, 0.015899999, -0.035, -1.6003, 0.265, 0.035, -0.92649996, 0.26909998, 0.035, -1.6003, 0.265, -0.035, -0.92649996, 0.26909998, 0.035, -0.92649996, 0.26909998, -0.035, -1.6003, 0.265, -0.035, -0.92649996, 0.26909998, 0.035, -0.9102, 0.8204, 0.035, -0.92649996, 0.26909998, -0.035, -0.9102, 0.8204, 0.035, -0.9102, 0.8204, -0.035, -0.92649996, 0.26909998)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tuv64"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c5pi2"]
 shading_mode = 0
-albedo_texture = ExtResource("7_jeqay")
+albedo_texture = ExtResource("11_j7rmy")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_siudo"]
+size = Vector3(10, 8, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o183l"]
 size = Vector3(10, 4, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mvxq3"]
-size = Vector3(10, 4, 10)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_whlyx"]
 size = Vector3(10, 4, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fnxub"]
@@ -144,13 +190,6 @@ shading_mode = 0
 albedo_texture = ExtResource("11_j7rmy")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hvglj"]
-size = Vector3(10, 8, 10)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c5pi2"]
-shading_mode = 0
-albedo_texture = ExtResource("11_j7rmy")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_siudo"]
 size = Vector3(10, 8, 10)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dq8j3"]
@@ -380,8 +419,12 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0
 [node name="RoadSegment17" parent="World/Road" unique_id=308008358 instance=ExtResource("1_7mxt6")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -191)
 
-[node name="StickMan Right Sneak2" parent="World/Road/RoadSegment17" unique_id=420849049 node_paths=PackedStringArray("player") instance=ExtResource("2_mvxq3")]
+[node name="StickMan Left Forest" parent="World/Road/RoadSegment17" unique_id=420849049 node_paths=PackedStringArray("player") instance=ExtResource("2_mvxq3")]
 transform = Transform3D(1.4959852, -1.7763568e-15, -0.10967854, -0.10967854, -6.556707e-08, -1.4959852, -4.794202e-09, 1.5, -6.539158e-08, -7.926337, -0.4712677, 1.1070085)
+player = NodePath("../../../../Player")
+
+[node name="StickMan Left Forest2" parent="World/Road/RoadSegment17" unique_id=244617336 node_paths=PackedStringArray("player") instance=ExtResource("2_mvxq3")]
+transform = Transform3D(1.4959852, -1.7763568e-15, -0.10967854, -0.10967854, -6.556707e-08, -1.4959852, -4.794202e-09, 1.5, -6.539158e-08, -10.020241, 19.960815, 1.1070093)
 player = NodePath("../../../../Player")
 
 [node name="StickMan Right Sneak3" parent="World/Road/RoadSegment17" unique_id=1042503921 node_paths=PackedStringArray("player") instance=ExtResource("2_mvxq3")]
@@ -401,20 +444,6 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0
 [node name="RoadSegment24" parent="World/Road" unique_id=77209984 instance=ExtResource("1_7mxt6")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -227)
 
-[node name="Goal Trigger" type="Area3D" parent="World/Road/RoadSegment24" unique_id=1510367518]
-collision_layer = 0
-collision_mask = 3
-input_ray_pickable = false
-script = ExtResource("4_okht7")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Road/RoadSegment24/Goal Trigger" unique_id=1030597084]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015014648, 0, 1.7998657)
-shape = SubResource("BoxShape3D_kjfgv")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Road/RoadSegment24/Goal Trigger" unique_id=840046220]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 1.8944592)
-mesh = SubResource("QuadMesh_kjfgv")
-
 [node name="RoadSegment25" parent="World/Road" unique_id=1227193795 instance=ExtResource("1_7mxt6")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -239)
 
@@ -427,11 +456,160 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0
 [node name="RoadSegment28" parent="World/Road" unique_id=487960105 instance=ExtResource("1_7mxt6")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -275)
 
+[node name="RoadSegment30" parent="World/Road" unique_id=1971076877 instance=ExtResource("1_7mxt6")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -299)
+
+[node name="RoadSegment31" parent="World/Road" unique_id=1718051286 instance=ExtResource("1_7mxt6")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -311)
+
+[node name="RoadSegment32" parent="World/Road" unique_id=1731209746 instance=ExtResource("1_7mxt6")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -323)
+
+[node name="RoadSegment33" parent="World/Road" unique_id=735513914 instance=ExtResource("1_7mxt6")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -335)
+
 [node name="RoadSegment29" parent="World/Road" unique_id=1996374904 instance=ExtResource("1_7mxt6")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -287)
 
+[node name="Goal Trigger" type="Area3D" parent="World/Road/RoadSegment29" unique_id=1373456912]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4624329, 1.513472e-07)
+collision_layer = 0
+collision_mask = 3
+input_ray_pickable = false
+script = ExtResource("4_okht7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Road/RoadSegment29/Goal Trigger" unique_id=376784148]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015014648, 0, 1.7998657)
+shape = SubResource("BoxShape3D_kjfgv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Road/RoadSegment29/Goal Trigger" unique_id=1768754827]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 1.8944592)
+mesh = SubResource("QuadMesh_kjfgv")
+
+[node name="Grave Yard" type="Node3D" parent="World" unique_id=569821532]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -10.269391, 0, -245.34613)
+
+[node name="Tomb 1" type="Sprite3D" parent="World/Grave Yard" unique_id=1761955797]
+transform = Transform3D(0.8656453, 0.22650729, 0.44648942, 0.43194708, 0.1130245, -0.8947889, -0.25314045, 0.9674296, -3.9112457e-08, 2.9028716, 2.1591492, 0.31242332)
+texture = ExtResource("6_uotv2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Grave Yard/Tomb 1" unique_id=1196506693]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Grave Yard/Tomb 1/StaticBody3D" unique_id=1599576471]
+transform = Transform3D(0.96317685, -0.2639645, -0.051118255, 0.26838464, 0.95530885, 0.12391384, 0.016124815, -0.13307035, 0.9909754, -0.093803406, -0.030658722, 0.0046081543)
+shape = SubResource("BoxShape3D_2qm51")
+
+[node name="Tomb 2" type="Sprite3D" parent="World/Grave Yard" unique_id=1807758543]
+transform = Transform3D(0.8975394, 0.043562576, 0.43877733, 0.4319471, 0.113024496, -0.8947889, -0.0885719, 0.99263686, 0.08262722, 4.846725, 2.1591492, 0.5103282)
+texture = ExtResource("7_2ir8i")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Grave Yard/Tomb 2" unique_id=1467060139]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Grave Yard/Tomb 2/StaticBody3D" unique_id=968819826]
+transform = Transform3D(0.9977658, -0.06607561, -0.0094228685, 0.06634292, 0.9972937, 0.031684525, 0.0073034167, -0.03223887, 0.9994533, -0.18473053, 0.02456665, 0.0135650635)
+shape = SubResource("BoxShape3D_0ltmj")
+
+[node name="Tomb 5" type="Sprite3D" parent="World/Grave Yard" unique_id=860693860]
+transform = Transform3D(0.8807576, -0.2664155, 0.39152148, 0.43194708, 0.11302448, -0.89478886, 0.1941341, 0.9572086, 0.21462454, 2.4210749, 4.514923, 0.42595515)
+texture = ExtResource("8_byvlu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Grave Yard/Tomb 5" unique_id=53603178]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Grave Yard/Tomb 5/StaticBody3D" unique_id=2126985915]
+transform = Transform3D(0.96908206, 0.24619058, 0.016173959, -0.24247916, 0.9624809, -0.12179286, -0.045551807, 0.11410624, 0.99242216, -0.030220032, -0.10795975, 0.0059661865)
+shape = SubResource("BoxShape3D_yn11l")
+
+[node name="Tomb 3" type="Sprite3D" parent="World/Grave Yard" unique_id=1301764145]
+transform = Transform3D(0.8975394, 0.043562576, 0.43877733, 0.4319471, 0.113024496, -0.8947889, -0.0885719, 0.99263686, 0.08262722, 5.6058536, 4.365036, 0.46695158)
+texture = ExtResource("9_altug")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Grave Yard/Tomb 3" unique_id=281998233]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Grave Yard/Tomb 3/StaticBody3D" unique_id=785805089]
+transform = Transform3D(0.9977658, -0.06607561, -0.0094228685, 0.06634292, 0.9972937, 0.031684525, 0.0073034167, -0.03223887, 0.9994533, -0.0046157837, -0.117069244, 0.01977539)
+shape = SubResource("BoxShape3D_ouoin")
+
+[node name="Tomb 4" type="Sprite3D" parent="World/Grave Yard" unique_id=1715882919]
+transform = Transform3D(0.8840254, 0.14347866, 0.4448744, 0.43194708, 0.11302448, -0.89478886, -0.17866482, 0.9831782, 0.03794134, 3.4729118, 0.46281433, 0.4518717)
+texture = ExtResource("10_wg1du")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Grave Yard/Tomb 4" unique_id=285991836]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Grave Yard/Tomb 4/StaticBody3D" unique_id=187578113]
+transform = Transform3D(0.9786063, -0.20256326, -0.035912216, 0.20512977, 0.9740402, 0.09574502, 0.015585363, -0.1010637, 0.99475765, 0.0154953, -0.00038146973, 0.009231567)
+shape = SubResource("BoxShape3D_0jbqw")
+
+[node name="Tomb 6" type="Sprite3D" parent="World/Grave Yard" unique_id=294138899]
+transform = Transform3D(0.90102535, -0.09773815, 0.42261186, 0.4319471, 0.11302448, -0.89478886, 0.039689545, 0.9887733, 0.14405562, 1.0410156, 0.88171387, 0.45364583)
+texture = ExtResource("11_xohij")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Grave Yard/Tomb 6" unique_id=1600458954]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Grave Yard/Tomb 6/StaticBody3D" unique_id=835949585]
+transform = Transform3D(0.9970337, 0.076382294, 0.008222461, -0.076027706, 0.9964063, -0.03715349, -0.01102972, 0.036419287, 0.99926966, 0.026870728, -0.06680107, 0.006668091)
+shape = SubResource("BoxShape3D_2b7qq")
+
+[node name="Tomb 7" type="Sprite3D" parent="World/Grave Yard" unique_id=1949076462]
+transform = Transform3D(0.9017694, -0.037307303, 0.43060428, 0.43194705, 0.11302445, -0.89478874, -0.015286658, 0.9928914, 0.118036784, 4.9944806, 6.282074, 0.60430336)
+texture = ExtResource("12_k5rvu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Grave Yard/Tomb 7" unique_id=1471921030]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Grave Yard/Tomb 7/StaticBody3D" unique_id=1250247208]
+transform = Transform3D(0.99939716, 0.03415335, 0.004029751, -0.03408281, 0.99927473, -0.016542614, -0.004590422, 0.01639621, 0.9998484, -0.09402466, -0.08097458, 0.005126953)
+shape = SubResource("BoxShape3D_qvk0v")
+
+[node name="Tomb Loot" type="Sprite3D" parent="World/Grave Yard" unique_id=1066504978]
+transform = Transform3D(0.89958537, 0.017025158, 0.43641293, 0.43194702, 0.113024436, -0.8947887, -0.06455927, 0.9934462, 0.09432118, 1.2933645, 3.2241974, 0.7983821)
+texture = ExtResource("13_2ir8i")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Grave Yard/Tomb Loot" unique_id=562168779]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Grave Yard/Tomb Loot/StaticBody3D" unique_id=1760705092]
+transform = Transform3D(0.9988713, -0.04703642, -0.006484568, 0.047171287, 0.9986239, 0.022599638, 0.005418122, -0.022879273, 0.9997172, -0.028701782, -0.022851944, 0.0041046143)
+shape = SubResource("BoxShape3D_byvlu")
+
+[node name="MeshInstance3D20" type="MeshInstance3D" parent="World/Grave Yard" unique_id=1757449718]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 20.170288, -0.52801514, 2.3765717)
+mesh = ExtResource("6_sws0b")
+surface_material_override/0 = SubResource("StandardMaterial3D_tuv64")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Grave Yard/MeshInstance3D20" unique_id=579023203]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Grave Yard/MeshInstance3D20/StaticBody3D" unique_id=45353389]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2541504, 0, 0)
+shape = SubResource("BoxShape3D_whlyx")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="World/Grave Yard/MeshInstance3D20/StaticBody3D" unique_id=1934060084]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5377808, 1.5340881, 0.02142334)
+shape = SubResource("BoxShape3D_kr4f2")
+
+[node name="StickMan Right Grave Yard" parent="World/Grave Yard/MeshInstance3D20" unique_id=1617438419 node_paths=PackedStringArray("player") instance=ExtResource("2_mvxq3")]
+transform = Transform3D(-1.4733976, 0, -0.28124827, 0, 1.5, 0, 0.28124827, 0, -1.4733976, -4.4126253, -0.5653248, -3.429184)
+player = NodePath("../../../../Player")
+
+[node name="StickMan Left Grave Yard" parent="World/Grave Yard/MeshInstance3D20" unique_id=1957150499 node_paths=PackedStringArray("player") instance=ExtResource("2_mvxq3")]
+transform = Transform3D(1.4811432, 0, 0.23709819, 0, 1.5, 0, -0.23709819, 0, 1.4811432, -15.489229, -1.337851, -3.429184)
+player = NodePath("../../../../Player")
+
+[node name="Lake" type="Sprite3D" parent="World/Grave Yard" unique_id=776120219]
+transform = Transform3D(2.6417356, -1.4217008, -6.214452e-08, 1.4217008, 2.6417356, -1.5660234e-08, 6.214452e-08, -1.5660241e-08, 3, 0.94153595, -8.370239, -1.3195449e-06)
+texture = ExtResource("16_byvlu")
+
+[node name="Wave 1" type="Sprite3D" parent="World/Grave Yard/Lake" unique_id=766136597]
+transform = Transform3D(0.99315274, -0.09992723, -0.06051585, -0.053400725, 0.07240348, -0.9959448, 0.10390363, 0.99235696, 0.06657168, 0, 0, 0.106037065)
+texture = ExtResource("17_xohij")
+
+[node name="Wave 2" type="Sprite3D" parent="World/Grave Yard/Lake" unique_id=758773858]
+transform = Transform3D(0.9581803, -0.21650977, 0.18712047, 0.20485857, 0.062408254, -0.97679996, 0.19980897, 0.9742837, 0.10415239, -0.63329697, -0.2260437, 0.17814367)
+texture = ExtResource("18_k5rvu")
+
+[node name="Wave 3" type="Sprite3D" parent="World/Grave Yard/Lake" unique_id=520511754]
+transform = Transform3D(0.9889921, 0.074247845, 0.12799141, 0.13142842, -0.043394912, -0.99037564, -0.067978986, 0.9962954, -0.052675284, 0.9907608, 0.12497711, 0.20161217)
+texture = ExtResource("19_xohij")
+
 [node name="Pine Forrest" type="Node3D" parent="World" unique_id=321856749]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -287)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -273.07343)
 
 [node name="Tree v5 1" type="Sprite3D" parent="World/Pine Forrest" unique_id=581481423]
 transform = Transform3D(1, 0, 0, 0, -7.351371e-08, -1, 0, 1, -7.351371e-08, 10.075838, 1.8226929, 2.5700202)
@@ -453,6 +631,46 @@ transform = Transform3D(-4.371139e-08, -2.9802322e-08, -1, 2.9802322e-08, 1, -2.
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Pine Forrest/Tree v6 1/StaticBody3D" unique_id=744590641]
 shape = SubResource("ConcavePolygonShape3D_kh8ip")
 
+[node name="Tree v6 2" type="Sprite3D" parent="World/Pine Forrest" unique_id=1801707606]
+transform = Transform3D(1, 0, 0, 0, -7.351371e-08, -1, 0, 1, -7.351371e-08, 10.242898, -10.522491, 2.3715005)
+texture = ExtResource("7_dq8j3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Pine Forrest/Tree v6 2" unique_id=1769108941]
+transform = Transform3D(-4.371139e-08, -2.9802322e-08, -1, 2.9802322e-08, 1, -2.9802322e-08, 1, -2.9802322e-08, -4.371139e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Pine Forrest/Tree v6 2/StaticBody3D" unique_id=93889270]
+shape = SubResource("ConcavePolygonShape3D_kh8ip")
+
+[node name="Tree v6 3" type="Sprite3D" parent="World/Pine Forrest" unique_id=1072181447]
+transform = Transform3D(1, 0, 0, 0, -7.351371e-08, -1, 0, 1, -7.351371e-08, -4.833085, -14.072327, 2.3715003)
+texture = ExtResource("7_dq8j3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Pine Forrest/Tree v6 3" unique_id=1585936995]
+transform = Transform3D(-4.371139e-08, -2.9802322e-08, -1, 2.9802322e-08, 1, -2.9802322e-08, 1, -2.9802322e-08, -4.371139e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Pine Forrest/Tree v6 3/StaticBody3D" unique_id=17301085]
+shape = SubResource("ConcavePolygonShape3D_kh8ip")
+
+[node name="Tree v6 4" type="Sprite3D" parent="World/Pine Forrest" unique_id=589997043]
+transform = Transform3D(1, 0, 0, 0, -7.351371e-08, -1, 0, 1, -7.351371e-08, -8.814607, -10.340179, 2.3714995)
+texture = ExtResource("7_dq8j3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Pine Forrest/Tree v6 4" unique_id=1279484399]
+transform = Transform3D(-4.371139e-08, -2.9802322e-08, -1, 2.9802322e-08, 1, -2.9802322e-08, 1, -2.9802322e-08, -4.371139e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Pine Forrest/Tree v6 4/StaticBody3D" unique_id=771599031]
+shape = SubResource("ConcavePolygonShape3D_kh8ip")
+
+[node name="Tree v6 5" type="Sprite3D" parent="World/Pine Forrest" unique_id=1032210273]
+transform = Transform3D(1, 0, 0, 0, -7.351371e-08, -1, 0, 1, -7.351371e-08, -6.340697, -6.7662354, 2.3714998)
+texture = ExtResource("7_dq8j3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Pine Forrest/Tree v6 5" unique_id=707115298]
+transform = Transform3D(-4.371139e-08, -2.9802322e-08, -1, 2.9802322e-08, 1, -2.9802322e-08, 1, -2.9802322e-08, -4.371139e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Pine Forrest/Tree v6 5/StaticBody3D" unique_id=739876845]
+shape = SubResource("ConcavePolygonShape3D_kh8ip")
+
 [node name="Tree v7 1" type="Sprite3D" parent="World/Pine Forrest" unique_id=713262307]
 transform = Transform3D(1, 0, 0, 0, -7.351371e-08, -1, 0, 1, -7.351371e-08, 12.236162, -1.9481506, 0.9963216)
 texture = ExtResource("8_kh8ip")
@@ -463,8 +681,58 @@ transform = Transform3D(1.3113416e-07, -2.9802322e-08, -1, 2.980232e-08, 1, -2.9
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Pine Forrest/Tree v7 1/StaticBody3D" unique_id=461563155]
 shape = SubResource("ConcavePolygonShape3D_wtj7t")
 
+[node name="Tree v7 2" type="Sprite3D" parent="World/Pine Forrest" unique_id=995842248]
+transform = Transform3D(1, 0, 0, 0, -7.351371e-08, -1, 0, 1, -7.351371e-08, 5.202978, 2.6410522, 0.9963238)
+texture = ExtResource("8_kh8ip")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Pine Forrest/Tree v7 2" unique_id=467947799]
+transform = Transform3D(1.3113416e-07, -2.9802322e-08, -1, 2.980232e-08, 1, -2.9802317e-08, 1, -2.9802317e-08, 1.3113416e-07, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Pine Forrest/Tree v7 2/StaticBody3D" unique_id=435820074]
+shape = SubResource("ConcavePolygonShape3D_wtj7t")
+
+[node name="Tree v7 4" type="Sprite3D" parent="World/Pine Forrest" unique_id=1809348263]
+transform = Transform3D(1, 0, 0, 0, -7.351371e-08, -1, 0, 1, -7.351371e-08, -6.724453, 0.13693237, 0.9963218)
+texture = ExtResource("8_kh8ip")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Pine Forrest/Tree v7 4" unique_id=581909370]
+transform = Transform3D(1.3113416e-07, -2.9802322e-08, -1, 2.980232e-08, 1, -2.9802317e-08, 1, -2.9802317e-08, 1.3113416e-07, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Pine Forrest/Tree v7 4/StaticBody3D" unique_id=150197386]
+shape = SubResource("ConcavePolygonShape3D_wtj7t")
+
+[node name="Tree v7 5" type="Sprite3D" parent="World/Pine Forrest" unique_id=307472873]
+transform = Transform3D(1, 0, 0, 0, -7.351371e-08, -1, 0, 1, -7.351371e-08, -4.46972, -16.10669, 0.9963211)
+texture = ExtResource("8_kh8ip")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Pine Forrest/Tree v7 5" unique_id=920757588]
+transform = Transform3D(1.3113416e-07, -2.9802322e-08, -1, 2.980232e-08, 1, -2.9802317e-08, 1, -2.9802317e-08, 1.3113416e-07, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Pine Forrest/Tree v7 5/StaticBody3D" unique_id=638509109]
+shape = SubResource("ConcavePolygonShape3D_wtj7t")
+
+[node name="Tree v7 6" type="Sprite3D" parent="World/Pine Forrest" unique_id=1612247495]
+transform = Transform3D(1, 0, 0, 0, -7.351371e-08, -1, 0, 1, -7.351371e-08, 4.6565905, -11.056, 0.9963213)
+texture = ExtResource("8_kh8ip")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Pine Forrest/Tree v7 6" unique_id=629849079]
+transform = Transform3D(1.3113416e-07, -2.9802322e-08, -1, 2.980232e-08, 1, -2.9802317e-08, 1, -2.9802317e-08, 1.3113416e-07, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Pine Forrest/Tree v7 6/StaticBody3D" unique_id=1808294468]
+shape = SubResource("ConcavePolygonShape3D_wtj7t")
+
+[node name="Tree v7 3" type="Sprite3D" parent="World/Pine Forrest" unique_id=1090299757]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -8.486718, -272.77094, -1.1923196e-05)
+texture = ExtResource("8_kh8ip")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Pine Forrest/Tree v7 3" unique_id=392216601]
+transform = Transform3D(1.3113416e-07, -2.9802322e-08, -1, 2.980232e-08, 1, -2.9802317e-08, 1, -2.9802317e-08, 1.3113416e-07, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Pine Forrest/Tree v7 3/StaticBody3D" unique_id=874983493]
+shape = SubResource("ConcavePolygonShape3D_wtj7t")
+
 [node name="Tree v8 1" type="Sprite3D" parent="World/Pine Forrest" unique_id=1142242229]
-transform = Transform3D(1, 0, 0, 0, -7.351371e-08, -1, 0, 1, -7.351371e-08, 9.938091, -3.5365906, 1.2651445)
+transform = Transform3D(1, 0, 0, 0, -7.351371e-08, -1, 0, 1, -7.351371e-08, -7.020529, -15.105804, 1.265145)
 texture = ExtResource("9_wtj7t")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="World/Pine Forrest/Tree v8 1" unique_id=1151549638]
@@ -483,6 +751,26 @@ transform = Transform3D(-4.371139e-08, -2.9802322e-08, -1, 2.9802322e-08, 1, -2.
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Pine Forrest/Tree v9 1/StaticBody3D" unique_id=472638008]
 shape = SubResource("ConcavePolygonShape3D_amfpx")
 
+[node name="Tree v9 2" type="Sprite3D" parent="World/Pine Forrest" unique_id=737999605]
+transform = Transform3D(1, 0, 0, 0, -7.351371e-08, -1, 0, 1, -7.351371e-08, -9.171478, -0.4190979, 1.3528616)
+texture = ExtResource("10_bk6fk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Pine Forrest/Tree v9 2" unique_id=2023765375]
+transform = Transform3D(-4.371139e-08, -2.9802322e-08, -1, 2.9802322e-08, 1, -2.9802322e-08, 1, -2.9802322e-08, -4.371139e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Pine Forrest/Tree v9 2/StaticBody3D" unique_id=1725131573]
+shape = SubResource("ConcavePolygonShape3D_amfpx")
+
+[node name="Tree v9 3" type="Sprite3D" parent="World/Pine Forrest" unique_id=132883301]
+transform = Transform3D(1, 0, 0, 0, -7.351371e-08, -1, 0, 1, -7.351371e-08, -6.16643, 2.8084106, 1.3528618)
+texture = ExtResource("10_bk6fk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Pine Forrest/Tree v9 3" unique_id=1954113448]
+transform = Transform3D(-4.371139e-08, -2.9802322e-08, -1, 2.9802322e-08, 1, -2.9802322e-08, 1, -2.9802322e-08, -4.371139e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Pine Forrest/Tree v9 3/StaticBody3D" unique_id=72370223]
+shape = SubResource("ConcavePolygonShape3D_amfpx")
+
 [node name="Tree v10 1" type="Sprite3D" parent="World/Pine Forrest" unique_id=719796825]
 transform = Transform3D(1, 0, 0, 0, -7.351371e-08, -1, 0, 1, -7.351371e-08, 6.97857, -5.2747498, 1.6295018)
 texture = ExtResource("11_amfpx")
@@ -492,6 +780,52 @@ transform = Transform3D(-4.371139e-08, -2.9802322e-08, -1, 2.9802322e-08, 1, -2.
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Pine Forrest/Tree v10 1/StaticBody3D" unique_id=1819217371]
 shape = SubResource("ConcavePolygonShape3D_0qops")
+
+[node name="Tree v10 2" type="Sprite3D" parent="World/Pine Forrest" unique_id=1806279364]
+transform = Transform3D(1, 0, 0, 0, -7.351371e-08, -1, 0, 1, -7.351371e-08, -5.414094, -2.734497, 1.6295019)
+texture = ExtResource("11_amfpx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Pine Forrest/Tree v10 2" unique_id=951603470]
+transform = Transform3D(-4.371139e-08, -2.9802322e-08, -1, 2.9802322e-08, 1, -2.9802322e-08, 1, -2.9802322e-08, -4.371139e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Pine Forrest/Tree v10 2/StaticBody3D" unique_id=286693801]
+shape = SubResource("ConcavePolygonShape3D_0qops")
+
+[node name="Tree v10 3" type="Sprite3D" parent="World/Pine Forrest" unique_id=1947735480]
+transform = Transform3D(1, 0, 0, 0, -7.351371e-08, -1, 0, 1, -7.351371e-08, -5.3715534, -10.917786, 1.6295016)
+texture = ExtResource("11_amfpx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Pine Forrest/Tree v10 3" unique_id=447624551]
+transform = Transform3D(-4.371139e-08, -2.9802322e-08, -1, 2.9802322e-08, 1, -2.9802322e-08, 1, -2.9802322e-08, -4.371139e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Pine Forrest/Tree v10 3/StaticBody3D" unique_id=1151141722]
+shape = SubResource("ConcavePolygonShape3D_0qops")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="World/Pine Forrest" unique_id=225348288]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -9.059967, 9.346436, 3.9040895)
+mesh = ExtResource("10_mqwlk")
+surface_material_override/0 = SubResource("StandardMaterial3D_c5pi2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Pine Forrest/MeshInstance3D14" unique_id=1812842376]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Pine Forrest/MeshInstance3D14/StaticBody3D" unique_id=907469703]
+shape = SubResource("BoxShape3D_siudo")
+
+[node name="StickMan Left Grave Yard" parent="World/Pine Forrest" unique_id=159405542 node_paths=PackedStringArray("player") instance=ExtResource("2_mvxq3")]
+transform = Transform3D(1.4811434, 0, 0.23709823, 0.23223592, -0.30222023, -1.4507687, 0.047770597, 1.4692391, -0.29842106, -4.6024656, -9.429199, 1.0364358)
+player = NodePath("../../../Player")
+
+[node name="StickMan Left Grave Yard4" parent="World/Pine Forrest" unique_id=54674389 node_paths=PackedStringArray("player") instance=ExtResource("2_mvxq3")]
+transform = Transform3D(1.4811434, 0, 0.23709823, 0.23223592, -0.30222023, -1.4507687, 0.047770597, 1.4692391, -0.29842106, -4.9191055, 9.464478, 8.966493)
+player = NodePath("../../../Player")
+
+[node name="StickMan Left Grave Yard2" parent="World/Pine Forrest" unique_id=417636895 node_paths=PackedStringArray("player") instance=ExtResource("2_mvxq3")]
+transform = Transform3D(-1.4811434, -1.5474242e-08, -0.23709837, -0.23223607, 0.30222017, 1.4507686, 0.047770582, 1.4692389, -0.2984209, 2.676095, 16.233063, 1.0364369)
+player = NodePath("../../../Player")
+
+[node name="StickMan Left Grave Yard3" parent="World/Pine Forrest" unique_id=380690307 node_paths=PackedStringArray("player") instance=ExtResource("2_mvxq3")]
+transform = Transform3D(-1.4811434, -1.5474242e-08, -0.23709837, -0.23223607, 0.30222017, 1.4507686, 0.047770582, 1.4692389, -0.2984209, 12.441613, -2.75708, 1.0364351)
+player = NodePath("../../../Player")
 
 [node name="Houses" type="Node3D" parent="World" unique_id=94305248]
 
@@ -504,6 +838,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_tuv64")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Houses/MeshInstance3D2/StaticBody3D" unique_id=5675183]
 shape = SubResource("BoxShape3D_o183l")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="World/Houses/MeshInstance3D2/StaticBody3D" unique_id=752389691]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5377808, 1.5340881, 0.02142334)
+shape = SubResource("BoxShape3D_kr4f2")
 
 [node name="MeshInstance3D26" type="MeshInstance3D" parent="World/Houses" unique_id=894542602]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -15.159943, 2, 11.481431)
@@ -525,6 +863,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_tuv64")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Houses/MeshInstance3D3/StaticBody3D" unique_id=1665462063]
 shape = SubResource("BoxShape3D_mvxq3")
 
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="World/Houses/MeshInstance3D3/StaticBody3D" unique_id=297536156]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5377808, 1.5340881, 0.02142334)
+shape = SubResource("BoxShape3D_kr4f2")
+
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="World/Houses" unique_id=1948359053]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.830383, 2, 37.52266)
 mesh = ExtResource("6_sws0b")
@@ -535,6 +877,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_tuv64")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Houses/MeshInstance3D6/StaticBody3D" unique_id=1646719887]
 shape = SubResource("BoxShape3D_mvxq3")
 
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="World/Houses/MeshInstance3D6/StaticBody3D" unique_id=993667537]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5377808, 1.5340881, 0.02142334)
+shape = SubResource("BoxShape3D_kr4f2")
+
 [node name="MeshInstance3D20" type="MeshInstance3D" parent="World/Houses" unique_id=1710726962]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 2, -125)
 mesh = ExtResource("6_sws0b")
@@ -544,6 +890,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_tuv64")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Houses/MeshInstance3D20/StaticBody3D" unique_id=2075363731]
 shape = SubResource("BoxShape3D_whlyx")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="World/Houses/MeshInstance3D20/StaticBody3D" unique_id=71126998]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5377808, 1.5340881, 0.02142334)
+shape = SubResource("BoxShape3D_kr4f2")
 
 [node name="StickMan Right Sneak" parent="World/Houses/MeshInstance3D20" unique_id=1998265030 node_paths=PackedStringArray("player") instance=ExtResource("2_mvxq3")]
 transform = Transform3D(-1.4733976, 0, -0.28124827, 0, 1.5, 0, 0.28124827, 0, -1.4733976, -4.0561647, 3.1039324, 2.583496)
@@ -559,6 +909,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_tuv64")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Houses/MeshInstance3D21/StaticBody3D" unique_id=453087924]
 shape = SubResource("BoxShape3D_fnxub")
 
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="World/Houses/MeshInstance3D21/StaticBody3D" unique_id=54004864]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5377808, 1.5340881, 0.02142334)
+shape = SubResource("BoxShape3D_kr4f2")
+
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="World/Houses" unique_id=191365526]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 2, -16)
 mesh = ExtResource("6_sws0b")
@@ -569,6 +923,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_tuv64")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Houses/MeshInstance3D4/StaticBody3D" unique_id=77358867]
 shape = SubResource("BoxShape3D_sg4r5")
 
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="World/Houses/MeshInstance3D4/StaticBody3D" unique_id=1423518127]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5377808, 1.5340881, 0.02142334)
+shape = SubResource("BoxShape3D_kr4f2")
+
 [node name="House2" type="MeshInstance3D" parent="World/Houses" unique_id=406347912]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -11, 2, -16)
 mesh = ExtResource("6_sws0b")
@@ -578,6 +936,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_tuv64")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Houses/House2/StaticBody3D" unique_id=2106972579]
 shape = SubResource("BoxShape3D_fm7pb")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="World/Houses/House2/StaticBody3D" unique_id=108681227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5377808, 1.5340881, 0.02142334)
+shape = SubResource("BoxShape3D_kr4f2")
 
 [node name="MeshInstance3D11" type="MeshInstance3D" parent="World/Houses" unique_id=1503196279]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 2, -61)
@@ -611,6 +973,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_tuv64")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="World/Houses/MeshInstance3D8/StaticBody3D" unique_id=2000207212]
 shape = SubResource("BoxShape3D_bj7pd")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="World/Houses/MeshInstance3D8/StaticBody3D" unique_id=2070779782]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5377808, 1.5340881, 0.02142334)
+shape = SubResource("BoxShape3D_kr4f2")
 
 [node name="House" type="MeshInstance3D" parent="World/Houses" unique_id=1747825559]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -11, 3, -28)
@@ -813,7 +1179,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_kh8ip")
 shape = SubResource("BoxShape3D_t5nvq")
 
 [node name="Ground" type="MeshInstance3D" parent="World" unique_id=1426158253]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.02, -870.1323)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.39208984, -0.020030517, -869.86536)
 mesh = SubResource("PlaneMesh_kjfgv")
 
 [node name="Forest" type="Node3D" parent="World" unique_id=1774039266]
@@ -999,7 +1365,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07952881, 0, 0.039110184)
 shape = SubResource("ConcavePolygonShape3D_8le2y")
 
 [node name="Tree v3 5" type="Sprite3D" parent="World/Forest" unique_id=1089750141]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.686677, -2.2617311, -64.62964)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.620369, -2.2617311, -58.246124)
 texture = ExtResource("16_8le2y")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="World/Forest/Tree v3 5" unique_id=392575589]
