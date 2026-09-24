@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bckjs78pu0m16"]
+
+[ext_resource type="Texture2D" uid="uid://d383342jxmj2j" path="res://stickmen/stickman5.png" id="1_g8m74"]
+[ext_resource type="Script" uid="uid://c2m7i1jk0k0j5" path="res://levels/demo/enemy.gd" id="2_y2dha"]
+[ext_resource type="Texture2D" uid="uid://b5s8jf4edrwvy" path="res://stickmen/gun3.png" id="3_6evsu"]
+[ext_resource type="Script" uid="uid://b0lw43l0njto7" path="res://levels/demo/enemy_gun.gd" id="4_hltj3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y8l0l"]
+size = Vector3(0.66442966, 3.043022, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2uehq"]
+size = Vector3(2.048706, 3.2312222, 0.05)
+
+[node name="StickMan5" type="Sprite3D" unique_id=413842714 node_paths=PackedStringArray("body", "gun")]
+texture = ExtResource("1_g8m74")
+script = ExtResource("2_y2dha")
+body = NodePath("StaticBody3D")
+gun = NodePath("EnemyGun")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1435188593]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1863136029]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02943945, 0.030864418, 0)
+shape = SubResource("BoxShape3D_y8l0l")
+
+[node name="Aim Assist" type="StaticBody3D" parent="." unique_id=1592289418]
+collision_layer = 2147483648
+collision_mask = 2147483648
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Aim Assist" unique_id=108251739]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0071411133, 0.009942055, 0)
+shape = SubResource("BoxShape3D_2uehq")
+
+[node name="EnemyGun" type="Sprite3D" parent="." unique_id=1243466001 node_paths=PackedStringArray("eyes")]
+transform = Transform3D(-0.012147866, 0.49965647, 0.013994218, 0.4997861, 0.012369525, -0.0078016827, -0.008142526, 0.013798682, -0.49974325, 0.33338913, 0.34540525, -0.01623535)
+texture = ExtResource("3_6evsu")
+script = ExtResource("4_hltj3")
+inital_aim_width = 3.0
+weapon_range = 35.0
+eyes = NodePath("Gun Vision")
+
+[node name="Gun Vision" type="RayCast3D" parent="EnemyGun" unique_id=1116864275]
+transform = Transform3D(1, 7.858034e-09, 0, 7.799827e-09, 1, 0, 0, 0, 1, 0.063193694, 0.93532467, -4.777452e-05)
+enabled = false
+collision_mask = 3
+collide_with_areas = true

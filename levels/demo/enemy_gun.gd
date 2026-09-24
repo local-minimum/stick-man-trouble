@@ -1,4 +1,4 @@
-extends MeshInstance3D
+extends Node3D
 class_name EnemyGun
 
 signal target_locked
@@ -17,6 +17,12 @@ func _update_aims(progress: float) -> void:
 
 var _target: Node3D
 var aim_tween: Tween
+
+func _ready() -> void:
+    if OS.has_feature("web_android") and not OS.has_feature("web_ios"):
+        lock_duration *= 1.5
+
+
 
 func aim(target: Node3D) -> void:
     if phase == Phase.AIMING:
