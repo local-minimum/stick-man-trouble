@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Stick Man"
-run/main_scene="uid://0uc4lsa20wh0"
+run/main_scene="uid://dr2cgnr2h2f3q"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

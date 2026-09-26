@@ -30,7 +30,7 @@ var _lateral_speed: float = 0.0
 var _paused: bool
 var _shake_time: float
 var _shake_factor: float
-
+var _level_ended: bool
 
 func is_beyond(other: Node3D, margin: float = 2.0) -> bool:
     return road_direction.dot(global_position) + margin > road_direction.dot(other.global_position)
@@ -42,9 +42,13 @@ func _enter_tree() -> void:
     if body_entered.connect(_handle_collide_body) != OK:
         push_error("Failed to connect body collision")
     SignalBus.on_start_level.connect(_handle_level_start)
+    SignalBus.on_end_level.connect(_handle_level_end)
 
 func _handle_level_start(_tick: int) -> void:
     _paused = false
+
+func _handle_level_end(_tick: int) -> void:
+    _level_ended = true
 
 func _input(event: InputEvent) -> void:
 
@@ -76,7 +80,10 @@ func _process(delta: float) -> void:
     _set_current_road_position()
 
     # Update speed
-    _speed += acceleration * delta
+    if _level_ended:
+        _speed *= (1.0 - delta)
+    else:
+        _speed += acceleration * delta
     if _speed > max_speed:
         _speed = max_speed
 

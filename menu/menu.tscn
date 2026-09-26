@@ -1,0 +1,412 @@
+[gd_scene format=3 uid="uid://dr2cgnr2h2f3q"]
+
+[ext_resource type="Texture2D" uid="uid://dkcltlehdqjg1" path="res://menu/title.png" id="1_6fswf"]
+[ext_resource type="Texture2D" uid="uid://xsyasrl0ingw" path="res://menu/title_bot_L_flash.png" id="2_bc54p"]
+[ext_resource type="Texture2D" uid="uid://bcxv01ji5kqin" path="res://menu/title_bot_L_bull.png" id="3_043lm"]
+[ext_resource type="Texture2D" uid="uid://wb73xdsx77pc" path="res://menu/title_M_hit.png" id="4_iesyu"]
+[ext_resource type="Texture2D" uid="uid://dl1trsmursau7" path="res://menu/title_top_L_flash.png" id="5_iuxab"]
+[ext_resource type="Texture2D" uid="uid://bmorm57noo2qk" path="res://menu/title_E_flash.png" id="6_dmxns"]
+[ext_resource type="Texture2D" uid="uid://ccf5edlqgnca4" path="res://menu/title_E_bull.png" id="7_3vbpa"]
+[ext_resource type="Texture2D" uid="uid://bekdixlo8dqnc" path="res://menu/title_top_L_bull.png" id="8_aycgx"]
+[ext_resource type="Texture2D" uid="uid://ctgufrk0um15w" path="res://menu/start.png" id="9_bpqio"]
+[ext_resource type="Script" uid="uid://bfokmadkcao07" path="res://menu/start_button.gd" id="10_bc54p"]
+
+[sub_resource type="Animation" id="Animation_6fswf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Low L Flash:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Low L Bullets:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("M hit:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Up L Flash:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("E Flash:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("E Bullets:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Up L Bullets:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Up L Flash:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Low L Flash:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.5019608)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("M hit:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.5882353)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("E Flash:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.6039216)]
+}
+
+[sub_resource type="Animation" id="Animation_bc54p"]
+resource_name = "default"
+length = 7.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Low L Flash:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.83, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Low L Bullets:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.45, 4.18),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("M hit:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3.38, 4.91),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Up L Flash:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.47, 1.44),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("E Flash:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3.97, 5.22),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("E Bullets:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 4.67, 5.87),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Up L Bullets:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1.15, 2.18),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Up L Flash:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.48, 0.77),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.42352942), Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Low L Flash:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1.83, 2.14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.5019608), Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("M hit:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(3.38, 3.66),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.5882353), Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("E Flash:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(3.97, 4.29),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.6039216), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_043lm"]
+_data = {
+&"RESET": SubResource("Animation_6fswf"),
+&"default": SubResource("Animation_bc54p")
+}
+
+[node name="Menu" type="Control" unique_id=323991695]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=463100664]
+custom_minimum_size = Vector2(0, 600)
+layout_mode = 0
+offset_left = 372.0
+offset_top = 2.9999924
+offset_right = 1597.0
+offset_bottom = 1263.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_6fswf")
+
+[node name="Low L Flash" type="TextureRect" parent="TextureRect" unique_id=2098972747]
+visible = false
+modulate = Color(1, 1, 1, 0.5019608)
+z_index = -1
+layout_mode = 0
+offset_left = 766.0
+offset_top = 769.0
+offset_right = 876.0
+offset_bottom = 866.0
+texture = ExtResource("2_bc54p")
+
+[node name="Low L Bullets" type="TextureRect" parent="TextureRect" unique_id=2108885369]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_left = 783.3334
+offset_top = 684.99994
+offset_right = 893.3334
+offset_bottom = 797.99994
+texture = ExtResource("3_043lm")
+
+[node name="M hit" type="TextureRect" parent="TextureRect" unique_id=47910148]
+visible = false
+modulate = Color(1, 1, 1, 0.5882353)
+z_index = -1
+layout_mode = 0
+offset_left = 790.00006
+offset_top = 560.0
+offset_right = 929.00006
+offset_bottom = 735.0
+texture = ExtResource("4_iesyu")
+
+[node name="Up L Flash" type="TextureRect" parent="TextureRect" unique_id=1942956974]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_left = 161.66663
+offset_top = 128.33334
+offset_right = 300.66663
+offset_bottom = 303.33334
+texture = ExtResource("5_iuxab")
+
+[node name="E Flash" type="TextureRect" parent="TextureRect" unique_id=172453820]
+visible = false
+modulate = Color(1, 1, 1, 0.6039216)
+z_index = -1
+layout_mode = 0
+offset_left = 918.3333
+offset_top = 750.0
+offset_right = 1067.3333
+offset_bottom = 973.0
+texture = ExtResource("6_dmxns")
+
+[node name="E Bullets" type="TextureRect" parent="TextureRect" unique_id=139435052]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_left = 1003.3333
+offset_top = 764.99994
+offset_right = 1188.3333
+offset_bottom = 1062.0
+texture = ExtResource("7_3vbpa")
+
+[node name="Up L Bullets" type="TextureRect" parent="TextureRect" unique_id=1956318982]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_left = 175.00002
+offset_top = 3.3333359
+offset_right = 330.0
+offset_bottom = 178.33334
+texture = ExtResource("8_aycgx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect" unique_id=1978497458]
+libraries/ = SubResource("AnimationLibrary_043lm")
+autoplay = &"default"
+
+[node name="Start Button" type="TextureButton" parent="." unique_id=2104660644]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.0
+offset_top = 61.0
+offset_right = 194.0
+offset_bottom = 239.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture_normal = ExtResource("9_bpqio")
+texture_pressed = ExtResource("9_bpqio")
+texture_hover = ExtResource("9_bpqio")
+texture_disabled = ExtResource("9_bpqio")
+texture_focused = ExtResource("9_bpqio")
+script = ExtResource("10_bc54p")
+level = "uid://0uc4lsa20wh0"
+
+[connection signal="mouse_entered" from="Start Button" to="Start Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Start Button" to="Start Button" method="_on_mouse_exited"]
+[connection signal="pressed" from="Start Button" to="Start Button" method="_on_pressed"]

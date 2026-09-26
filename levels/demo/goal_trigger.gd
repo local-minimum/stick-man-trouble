@@ -10,5 +10,5 @@ func _handle_player_enter(body: Node3D) -> void:
         _reload.call_deferred()
 
 func _reload() -> void:
-    await get_tree().create_timer(3.0).timeout
+    await get_tree().create_timer(5.0).timeout
     get_tree().reload_current_scene()
